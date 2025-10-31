@@ -31,7 +31,7 @@ Following the intent methodology's layers for constitution establishment:
 
 ## Outline
 
-You are updating the project constitution at `/memory/constitution.md`. This file is a TEMPLATE containing placeholder tokens in square brackets (e.g. `[PROJECT_NAME]`, `[PRINCIPLE_1_NAME]`). Your job is to (a) collect/derive concrete values, (b) fill the template precisely, and (c) propagate any amendments across dependent artifacts.
+You are updating the project constitution at `/memory/constitution.md`. This file is a TEMPLATE containing placeholder tokens in square brackets (e.g. `[PROJECT_NAME]`, `[PRINCIPLE_1_NAME]`). Your job is to (a) collect/derive concrete values, (b) fill the template precisely by replacing all placeholders, and (c) validate consistency with dependent artifacts (DO NOT modify template files - they are read-only).
 
 Follow this execution flow, applying intent methodology layers:
 
@@ -55,19 +55,24 @@ Follow this execution flow, applying intent methodology layers:
    - Ensure each Principle section: succinct name line, paragraph (or bullet list) capturing non‑negotiable rules, explicit rationale if not obvious.
    - Ensure Governance section lists amendment procedure, versioning policy, and compliance review expectations.
 
-4. Consistency propagation checklist (convert prior checklist into active validations):
-   - Read `/templates/plan-template.md` and ensure any "Constitution Check" or rules align with updated principles.
-   - Read `/templates/intent-template.md` for scope/requirements alignment—update if constitution adds/removes mandatory sections or constraints.
-   - Read `/templates/tasks-template.md` and ensure task categorization reflects new or removed principle-driven task types (e.g., observability, versioning, testing discipline).
-   - Read each command file in `/templates/commands/*.md` (including this one) to verify no outdated references (agent-specific names like CLAUDE only) remain when generic guidance is required.
-   - Read any runtime guidance docs (e.g., `README.md`, `docs/quickstart.md`, or agent-specific guidance files if present). Update references to principles changed.
+4. Consistency validation checklist (READ-ONLY verification, DO NOT modify template files):
+   - **IMPORTANT**: Templates (`/templates/*.md`) are SHARED templates and MUST NOT be modified. They will be used by other commands (`/intent.plan`, `/intent.capture`, etc.) and should remain generic.
+   - Read `/templates/plan-template.md` and verify that the "Constitution Check" section structure is compatible with your updated principles (DO NOT modify the template).
+   - Read `/templates/intent-template.md` and verify scope/requirements structure is compatible (DO NOT modify the template).
+   - Read `/templates/tasks-template.md` and verify task categorization structure is compatible (DO NOT modify the template).
+   - Note any incompatibilities in the Sync Impact Report as "⚠ pending" - these will be handled by the commands that use those templates.
+   - Read any runtime guidance docs (e.g., `README.md`, `docs/quickstart.md`, or agent-specific guidance files if present). These CAN be updated if they contain outdated principle references.
 
 5. Produce a Sync Impact Report (prepend as an HTML comment at top of the constitution file after update):
    - Version change: old → new
    - List of modified principles (old title → new title if renamed)
    - Added sections
    - Removed sections
-   - Templates requiring updates (✅ updated / ⚠ pending) with file paths
+   - Templates compatibility check (⚠ pending - templates are read-only, will be handled by other commands):
+     - `/templates/plan-template.md` - Constitution Check section compatible
+     - `/templates/intent-template.md` - Structure compatible
+     - `/templates/tasks-template.md` - Task categorization compatible
+   - Runtime docs updated (if any): List files that were updated
    - Follow-up TODOs if any placeholders intentionally deferred.
 
 6. Validation before final output:
@@ -77,6 +82,7 @@ Follow this execution flow, applying intent methodology layers:
    - Principles are declarative, testable, and free of vague language ("should" → replace with MUST/SHOULD rationale where appropriate).
 
 7. Write the completed constitution back to `/memory/constitution.md` (overwrite).
+   - **CRITICAL**: Only write to `/memory/constitution.md`. DO NOT modify any files in `/templates/` directory.
 
 8. Output a final summary to the user with:
    - New version and bump rationale.
