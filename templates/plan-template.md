@@ -1,7 +1,7 @@
 # Implementation Plan: [INTENT]
 
-**Branch**: `[###-intent-name]` | **Date**: [DATE] | **Spec**: [link]
-**Input**: Intent specification from `/specs/[###-intent-name]/intent.md`
+**Branch**: `[###-intent-name]` | **Date**: [DATE] | **Intent**: [link]
+**Input**: Intent specification from `/intents/[###-intent-name]/intent.md`
 
 **Intent Methodology Application**: This plan follows the shaping and injection stages, applying the selected design archetype ([ARCHITECT/HACKER/CRAFTSMAN/SCHOLAR/ZEN_CODER]) with action tendencies (verbose naming, abstract commenting, scenario-driven testing, as-you-go refactoring).
 
@@ -9,7 +9,7 @@
 
 ## Summary
 
-[Extract from intent spec: primary requirement + technical approach from research, following shaping stage methodology]
+[Extract from intent intent: primary requirement + technical approach from research, following shaping stage methodology]
 
 ## Technical Context
 
@@ -40,13 +40,13 @@
 ### Documentation (this feature)
 
 ```text
-specs/[###-feature]/
-├── plan.md              # This file (/speckit.plan command output)
-├── research.md          # Phase 0 output (/speckit.plan command)
-├── data-model.md        # Phase 1 output (/speckit.plan command)
-├── quickstart.md        # Phase 1 output (/speckit.plan command)
-├── contracts/           # Phase 1 output (/speckit.plan command)
-└── tasks.md             # Phase 2 output (/speckit.tasks command - NOT created by /speckit.plan)
+intents/[###-feature]/
+├── plan.md              # This file (/intent.plan command output)
+├── research.md          # Phase 0 output (/intent.plan command)
+├── data-model.md        # Phase 1 output (/intent.plan command)
+├── quickstart.md        # Phase 1 output (/intent.plan command)
+├── contracts/           # Phase 1 output (/intent.plan command)
+└── tasks.md             # Phase 2 output (/intent.tasks command - NOT created by /intent.plan)
 ```
 
 ### Source Code (repository root)

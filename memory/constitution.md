@@ -1,5 +1,5 @@
 # [PROJECT_NAME] Constitution
-<!-- Example: Spec Constitution, TaskFlow Constitution, etc. -->
+<!-- Example: Intent Constitution, TaskFlow Constitution, etc. -->
 
 ## Core Principles
 

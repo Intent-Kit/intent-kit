@@ -2,7 +2,7 @@
 
 ## The Power Inversion
 
-For decades, code has been king. Specifications served code—they were the scaffolding we built and then discarded once the "real work" of coding began. We wrote PRDs to guide development, created design docs to inform implementation, drew diagrams to visualize architecture. But these were always subordinate to the code itself. Code was truth. Everything else was, at best, good intentions. Code was the source of truth, and as it moved forward, specs rarely kept pace. As the asset (code) and the implementation are one, it's not easy to have a parallel implementation without trying to build from the code.
+For decades, code has been king. Specifications served code—they were the scaffolding we built and then discarded once the "real work" of coding began. We wrote PRDs to guide development, created design docs to inform implementation, drew diagrams to visualize architecture. But these were always subordinate to the code itself. Code was truth. Everything else was, at best, good intentions. Code was the source of truth, and as it moved forward, intents rarely kept pace. As the asset (code) and the implementation are one, it's not easy to have a parallel implementation without trying to build from the code.
 
 Intent-Driven Development (SDD) inverts this power structure. Specifications don't serve code—code serves specifications. The Product Requirements Document (PRD) isn't a guide for implementation; it's the source that generates implementation. Technical plans aren't documents that inform coding; they're precise definitions that produce code. This isn't an incremental improvement to how we build software. It's a fundamental rethinking of what drives development.
 
@@ -74,16 +74,16 @@ The key is treating specifications as the source of truth, with code as the gene
 
 The SDD methodology is significantly enhanced through three powerful commands that automate the specification → planning → tasking workflow:
 
-### The `/speckit.specify` Command
+### The `/intent.capture` Command
 
 This command transforms a simple feature description (the user-prompt) into a complete, structured specification with automatic repository management:
 
-1. **Automatic Feature Numbering**: Scans existing specs to determine the next feature number (e.g., 001, 002, 003)
+1. **Automatic Feature Numbering**: Scans existing intents to determine the next feature number (e.g., 001, 002, 003)
 2. **Branch Creation**: Generates a semantic branch name from your description and creates it automatically
 3. **Template-Based Generation**: Copies and customizes the feature specification template with your requirements
-4. **Directory Structure**: Creates the proper `specs/[branch-name]/` structure for all related documents
+4. **Directory Structure**: Creates the proper `intents/[branch-name]/` structure for all related documents
 
-### The `/speckit.plan` Command
+### The `/intent.plan` Command
 
 Once a feature specification exists, this command creates a comprehensive implementation plan:
 
@@ -93,7 +93,7 @@ Once a feature specification exists, this command creates a comprehensive implem
 4. **Detailed Documentation**: Generates supporting documents for data models, API contracts, and test scenarios
 5. **Quickstart Validation**: Produces a quickstart guide capturing key validation scenarios
 
-### The `/speckit.tasks` Command
+### The `/intent.tasks` Command
 
 After a plan is created, this command analyzes the plan and related design documents to generate an executable task list:
 
@@ -121,26 +121,26 @@ Total: ~12 hours of documentation work
 
 ```bash
 # Step 1: Create the feature specification (5 minutes)
-/speckit.specify Real-time chat system with message history and user presence
+/intent.capture Real-time chat system with message history and user presence
 
 # This automatically:
 # - Creates branch "003-chat-system"
-# - Generates specs/003-chat-system/spec.md
+# - Generates intents/003-chat-system/intent.md
 # - Populates it with structured requirements
 
 # Step 2: Generate implementation plan (5 minutes)
-/speckit.plan WebSocket for real-time messaging, PostgreSQL for history, Redis for presence
+/intent.plan WebSocket for real-time messaging, PostgreSQL for history, Redis for presence
 
 # Step 3: Generate executable tasks (5 minutes)
-/speckit.tasks
+/intent.tasks
 
 # This automatically creates:
-# - specs/003-chat-system/plan.md
-# - specs/003-chat-system/research.md (WebSocket library comparisons)
-# - specs/003-chat-system/data-model.md (Message and User schemas)
-# - specs/003-chat-system/contracts/ (WebSocket events, REST endpoints)
-# - specs/003-chat-system/quickstart.md (Key validation scenarios)
-# - specs/003-chat-system/tasks.md (Task list derived from the plan)
+# - intents/003-chat-system/plan.md
+# - intents/003-chat-system/research.md (WebSocket library comparisons)
+# - intents/003-chat-system/data-model.md (Message and User schemas)
+# - intents/003-chat-system/contracts/ (WebSocket events, REST endpoints)
+# - intents/003-chat-system/quickstart.md (Key validation scenarios)
+# - intents/003-chat-system/tasks.md (Task list derived from the plan)
 ```
 
 In 15 minutes, you have:
@@ -182,9 +182,9 @@ This constraint forces the LLM to maintain proper abstraction levels. When an LL
 Both templates mandate the use of `[NEEDS CLARIFICATION]` markers:
 
 ```text
-When creating this spec from a user prompt:
+When creating this intent from a user prompt:
 1. **Mark all ambiguities**: Use [NEEDS CLARIFICATION: specific question]
-2. **Don't guess**: If the prompt doesn't specify something, mark it
+2. **Don't guess**: If the prompt doesn't intent something, mark it
 ```
 
 This prevents the common LLM behavior of making plausible but potentially incorrect assumptions. Instead of guessing that a "login system" uses email/password authentication, the LLM must mark it as `[NEEDS CLARIFICATION: auth method not specified - email/password, SSO, OAuth?]`.
@@ -279,7 +279,7 @@ The constitution defines nine articles that shape every aspect of the developmen
 Every feature must begin as a standalone library—no exceptions. This forces modular design from the start:
 
 ```text
-Every feature in Specify MUST begin its existence as a standalone library.
+Every feature in Intent MUST begin its existence as a standalone library.
 No feature shall be implemented directly within application code without
 first being abstracted into a reusable library component.
 ```

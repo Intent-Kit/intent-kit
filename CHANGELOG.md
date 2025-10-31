@@ -5,7 +5,7 @@
 All notable changes to the Intent CLI and templates are documented here.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
-and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
+and this project adheres to [Semantic Versioning](https://semver.org/intent/v2.0.0.html).
 
 ## [0.0.20] - 2025-10-14
 
@@ -55,14 +55,14 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Changed
 
-- All command files now prefixed with `intent.` (e.g., `intent.specify.md`, `intent.plan.md`) for better discoverability and differentiation in IDE/CLI command palettes and file explorers
+- All command files now prefixed with `intent.` (e.g., `intent.intent.md`, `intent.plan.md`) for better discoverability and differentiation in IDE/CLI command palettes and file explorers
 
 ## [0.0.17] - 2025-09-22
 
 ### Added
 
-- New `/clarify` command template to surface up to 5 targeted clarification questions for an existing spec and persist answers into a Clarifications section in the spec.
-- New `/analyze` command template providing a non-destructive cross-artifact discrepancy and alignment report (spec, clarifications, plan, tasks, constitution) inserted after `/tasks` and before `/implement`.
+- New `/clarify` command template to surface up to 5 targeted clarification questions for an existing intent and persist answers into a Clarifications section in the intent.
+- New `/analyze` command template providing a non-destructive cross-artifact discrepancy and alignment report (intent, clarifications, plan, tasks, constitution) inserted after `/tasks` and before `/implement`.
   - Note: Constitution rules are explicitly treated as non-negotiable; any conflict is a CRITICAL finding requiring artifact remediation, not weakening of principles.
 
 ## [0.0.16] - 2025-09-22

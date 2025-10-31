@@ -28,7 +28,7 @@
 
 	// Use 'forwardPorts' to make a list of ports inside the container available locally.
   "forwardPorts": [
-	8080 // for Spec-Kit documentation site
+	8080 // for Intent-Kit documentation site
   ],
   "containerUser": "devcontainer",
   "updateRemoteUserUID": true,
@@ -58,18 +58,18 @@
       "settings": {
 		"debug.javascript.autoAttachFilter": "disabled", // fix running commands in integrated terminal
 
-		// Specify settings for Github Copilot
+		// Intent settings for Github Copilot
 		"git.autofetch": true,
 		"chat.promptFilesRecommendations": {
-			"speckit.constitution": true,
-			"speckit.specify": true,
-			"speckit.plan": true,
-			"speckit.tasks": true,
-			"speckit.implement": true
+			"intent.constitution": true,
+			"intent.capture": true,
+			"intent.plan": true,
+			"intent.tasks": true,
+			"intent.implement": true
 		},
 		"chat.tools.terminal.autoApprove": {
-			".specify/scripts/bash/": true,
-			".specify/scripts/powershell/": true
+			".intent/scripts/bash/": true,
+			".intent/scripts/powershell/": true
 		}
       }
     }

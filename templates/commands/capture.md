@@ -55,7 +55,7 @@ Given that intent description, apply the methodology:
    b. Find the highest feature number across all sources for the short-name:
       - Remote branches: `git ls-remote --heads origin | grep -E 'refs/heads/[0-9]+-<short-name>$'`
       - Local branches: `git branch | grep -E '^[* ]*[0-9]+-<short-name>$'`
-      - Specs directories: Check for directories matching `specs/[0-9]+-<short-name>`
+      - Intents directories: Check for directories matching `intents/[0-9]+-<short-name>`
 
    c. Determine the next available number:
       - Extract all numbers from all three sources
@@ -68,7 +68,7 @@ Given that intent description, apply the methodology:
       - PowerShell example: `{SCRIPT} -Json -Number 5 -ShortName "user-auth" "Add user authentication"`
 
    **IMPORTANT**:
-  - Check all three sources (remote branches, local branches, specs directories) to find the highest number
+  - Check all three sources (remote branches, local branches, intents directories) to find the highest number
   - Only match branches/directories with the exact short-name pattern
   - If no existing branches/directories found with this short-name, start with number 1
   - You must only ever run this script once per feature
@@ -107,16 +107,16 @@ Given that intent description, apply the methodology:
 
 - **Write the intent specification to SPEC_FILE using the template structure, replacing placeholders with concrete details derived from the intent description (arguments) while preserving section order and headings, following contextual_continuity principle.**
 
-- **Intent Specification Quality Validation**: After writing the initial intent spec, validate it against quality criteria:
+- **Intent Specification Quality Validation**: After writing the initial intent intent, validate it against quality criteria:
 
-   a. **Create Spec Quality Checklist**: Generate a checklist file at `FEATURE_DIR/checklists/requirements.md` using the checklist template structure with these validation items:
+   a. **Create Intent Quality Checklist**: Generate a checklist file at `FEATURE_DIR/checklists/requirements.md` using the checklist template structure with these validation items:
 
 ```markdown
       # Specification Quality Checklist: [FEATURE NAME]
       
       **Purpose**: Validate specification completeness and quality before proceeding to planning
       **Created**: [DATE]
-      **Feature**: [Link to spec.md]
+      **Feature**: [Link to intent.md]
       
       ## Content Quality
       
@@ -145,12 +145,12 @@ Given that intent description, apply the methodology:
       
       ## Notes
       
-      - Items marked incomplete require spec updates before `/intent.clarify` or `/intent.plan`
+      - Items marked incomplete require intent updates before `/intent.clarify` or `/intent.plan`
 ```
 
-   b. **Run Validation Check**: Review the spec against each checklist item:
+   b. **Run Validation Check**: Review the intent against each checklist item:
       - For each item, determine if it passes or fails
-      - Document specific issues found (quote relevant spec sections)
+      - Document specific issues found (quote relevant intent sections)
 
    c. **Handle Validation Results**:
 
@@ -201,7 +201,7 @@ Given that intent description, apply the methodology:
 
 e. Report completion with branch name, intent file path, checklist results, and readiness for the next phase (`/intent.clarify` or `/intent.plan`).
 
-**NOTE:** The script creates and checks out the new branch and initializes the intent spec file before writing.
+**NOTE:** The script creates and checks out the new branch and initializes the intent intent file before writing.
 
 ## General Guidelines
 
@@ -212,7 +212,7 @@ e. Report completion with branch name, intent file path, checklist results, and 
 - Maintain contextual_continuity across sessions
 - Avoid static descriptions; emphasize driving force over implementation details
 - Written for intent capture, not technical implementation
-- DO NOT create any checklists that are embedded in the intent spec. That will be a separate command.
+- DO NOT create any checklists that are embedded in the intent intent. That will be a separate command.
 
 ### Section Requirements
 

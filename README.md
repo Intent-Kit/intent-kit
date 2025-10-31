@@ -1,7 +1,7 @@
 <div align="center">
     <img src="./media/logo_small.webp" alt="Intent Templates Logo"/>
     <h1>🌱 Intent Templates</h1>
-    <h3><em>Spec Kit Templates - 0.0.2 Latest</em></h3>
+    <h3><em>Intent Kit Templates - 0.0.2 Latest</em></h3>
 </div>
 
 <p align="center">
@@ -401,7 +401,7 @@ see yours. You can edit any comments that you make, but you can't edit comments 
 delete any comments that you made, but you can't delete comments anybody else made.
 ```
 
-After this prompt is entered, you should see Claude Code kick off the planning and spec drafting process. Claude Code will also trigger some of the built-in scripts to set up the repository.
+After this prompt is entered, you should see Claude Code kick off the planning and intent drafting process. Claude Code will also trigger some of the built-in scripts to set up the repository.
 
 Once this step is completed, you should have a new branch created (e.g., `001-create-taskify`), as well as a new specification in the `intents/001-create-taskify` directory.
 
@@ -419,12 +419,12 @@ At this stage, your project folder contents should resemble the following:
     │  ├── create-new-feature.sh
     │  ├── setup-plan.sh
     │  └── update-claude-md.sh
-    ├── specs
+    ├── intents
     │  └── 001-create-taskify
-    │      └── spec.md
+    │      └── intent.md
     └── templates
         ├── plan-template.md
-        ├── spec-template.md
+        ├── intent-template.md
         └── tasks-template.md
 ```
 
@@ -452,7 +452,7 @@ one task in each stage of completion.
 You should also ask Claude Code to validate the **Review & Acceptance Checklist**, checking off the things that are validated/pass the requirements, and leave the ones that are not unchecked. The following prompt can be used:
 
 ```text
-Read the review and acceptance checklist, and check off each item in the checklist if the feature spec meets the criteria. Leave it empty if it does not.
+Read the review and acceptance checklist, and check off each item in the checklist if the feature intent meets the criteria. Leave it empty if it does not.
 ```
 
 It's important to use the interaction with Claude Code as an opportunity to clarify and ask questions around the specification - **do not treat its first attempt as final**.
@@ -480,20 +480,20 @@ The output of this step will include a number of implementation detail documents
 │  ├── create-new-feature.sh
 │  ├── setup-plan.sh
 │  └── update-claude-md.sh
-├── specs
+├── intents
 │  └── 001-create-taskify
 │      ├── contracts
-│      │  ├── api-spec.json
-│      │  └── signalr-spec.md
+│      │  ├── api-intent.json
+│      │  └── signalr-intent.md
 │      ├── data-model.md
 │      ├── plan.md
 │      ├── quickstart.md
 │      ├── research.md
-│      └── spec.md
+│      └── intent.md
 └── templates
     ├── CLAUDE-template.md
     ├── plan-template.md
-    ├── spec-template.md
+    ├── intent-template.md
     └── tasks-template.md
 ```
 
@@ -572,7 +572,7 @@ Once ready, use the `/intent.implement` command to execute your implementation p
 
 The `/intent.implement` command will:
 
-- Validate that all prerequisites are in place (constitution, spec, plan, and tasks)
+- Validate that all prerequisites are in place (constitution, intent, plan, and tasks)
 - Parse the task breakdown from `tasks.md`
 - Execute tasks in the correct order, respecting dependencies and parallel execution markers
 - Follow the TDD approach defined in your task plan

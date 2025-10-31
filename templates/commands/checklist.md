@@ -37,7 +37,7 @@ Following the intent methodology's quality assurance framework for checklist gen
 - ❌ NOT "Verify the button clicks correctly"
 - ❌ NOT "Test error handling works"
 - ❌ NOT "Confirm the API returns 200"
-- ❌ NOT checking if code/implementation matches the spec
+- ❌ NOT checking if code/implementation matches the intent
 
 **FOR requirements quality validation**:
 
@@ -45,9 +45,9 @@ Following the intent methodology's quality assurance framework for checklist gen
 - ✅ "Is 'prominent display' quantified with specific sizing/positioning?" (clarity)
 - ✅ "Are hover state requirements consistent across all interactive elements?" (consistency)
 - ✅ "Are accessibility requirements defined for keyboard navigation?" (coverage)
-- ✅ "Does the spec define what happens when logo image fails to load?" (edge cases)
+- ✅ "Does the intent define what happens when logo image fails to load?" (edge cases)
 
-**Metaphor**: If your spec is code written in English, the checklist is its unit test suite. You're testing whether the requirements are well-written, complete, unambiguous, and ready for implementation - NOT whether the implementation works.
+**Metaphor**: If your intent is code written in English, the checklist is its unit test suite. You're testing whether the requirements are well-written, complete, unambiguous, and ready for implementation - NOT whether the implementation works.
 
 ## User Input
 
@@ -64,7 +64,7 @@ You **MUST** consider the user input before proceeding (if not empty).
    - For single quotes in args like "I'm Groot", use escape syntax: e.g 'I'\''m Groot' (or double-quote if possible: "I'm Groot").
 
 2. **Clarify intent (dynamic)**: Derive up to THREE initial contextual clarifying questions (no pre-baked catalog). They MUST:
-   - Be generated from the user's phrasing + extracted signals from spec/plan/tasks
+   - Be generated from the user's phrasing + extracted signals from intent/plan/tasks
    - Only ask about information that materially changes checklist content
    - Be skipped individually if already unambiguous in `$ARGUMENTS`
    - Prefer precision over breadth
@@ -99,10 +99,10 @@ You **MUST** consider the user input before proceeding (if not empty).
    - Derive checklist theme (e.g., security, review, deploy, ux)
    - Consolidate explicit must-have items mentioned by user
    - Map focus selections to category scaffolding
-   - Infer any missing context from spec/plan/tasks (do NOT hallucinate)
+   - Infer any missing context from intent/plan/tasks (do NOT hallucinate)
 
 4. **Load feature context**: Read from FEATURE_DIR:
-   - spec.md: Feature requirements and scope
+   - intent.md: Feature requirements and scope
    - plan.md (if exists): Technical details, dependencies
    - tasks.md (if exists): Implementation tasks
 
@@ -154,14 +154,14 @@ You **MUST** consider the user input before proceeding (if not empty).
    - "Are keyboard navigation requirements defined for all interactive UI?" [Coverage]
    - "Is the fallback behavior specified when logo image fails to load?" [Edge Cases]
    - "Are loading states defined for asynchronous episode data?" [Completeness]
-   - "Does the spec define visual hierarchy for competing UI elements?" [Clarity]
+   - "Does the intent define visual hierarchy for competing UI elements?" [Clarity]
 
    **ITEM STRUCTURE**:
    Each item should follow this pattern:
    - Question format asking about requirement quality
-   - Focus on what's WRITTEN (or not written) in the spec/plan
+   - Focus on what's WRITTEN (or not written) in the intent/plan
    - Include quality dimension in brackets [Completeness/Clarity/Consistency/etc.]
-   - Reference spec section `[Spec §X.Y]` when checking existing requirements
+   - Reference intent section `[Intent §X.Y]` when checking existing requirements
    - Use `[Gap]` marker when checking for missing requirements
 
    **EXAMPLES BY QUALITY DIMENSION**:
@@ -172,12 +172,12 @@ You **MUST** consider the user input before proceeding (if not empty).
    - "Are mobile breakpoint requirements defined for responsive layouts? [Gap]"
 
    Clarity:
-   - "Is 'fast loading' quantified with specific timing thresholds? [Clarity, Spec §NFR-2]"
-   - "Are 'related episodes' selection criteria explicitly defined? [Clarity, Spec §FR-5]"
-   - "Is 'prominent' defined with measurable visual properties? [Ambiguity, Spec §FR-4]"
+   - "Is 'fast loading' quantified with specific timing thresholds? [Clarity, Intent §NFR-2]"
+   - "Are 'related episodes' selection criteria explicitly defined? [Clarity, Intent §FR-5]"
+   - "Is 'prominent' defined with measurable visual properties? [Ambiguity, Intent §FR-4]"
 
    Consistency:
-   - "Do navigation requirements align across all pages? [Consistency, Spec §FR-10]"
+   - "Do navigation requirements align across all pages? [Consistency, Intent §FR-10]"
    - "Are card component requirements consistent between landing and detail pages? [Consistency]"
 
    Coverage:
@@ -186,8 +186,8 @@ You **MUST** consider the user input before proceeding (if not empty).
    - "Are requirements specified for partial data loading failures? [Coverage, Exception Flow]"
 
    Measurability:
-   - "Are visual hierarchy requirements measurable/testable? [Acceptance Criteria, Spec §FR-1]"
-   - "Can 'balanced visual weight' be objectively verified? [Measurability, Spec §FR-2]"
+   - "Are visual hierarchy requirements measurable/testable? [Acceptance Criteria, Intent §FR-1]"
+   - "Can 'balanced visual weight' be objectively verified? [Measurability, Intent §FR-2]"
 
    **Scenario Classification & Coverage** (Requirements Quality Focus):
    - Check if requirements exist for: Primary, Alternate, Exception/Error, Recovery, Non-Functional scenarios
@@ -197,12 +197,12 @@ You **MUST** consider the user input before proceeding (if not empty).
 
    **Traceability Requirements**:
    - MINIMUM: ≥80% of items MUST include at least one traceability reference
-   - Each item should reference: spec section `[Spec §X.Y]`, or use markers: `[Gap]`, `[Ambiguity]`, `[Conflict]`, `[Assumption]`
+   - Each item should reference: intent section `[Intent §X.Y]`, or use markers: `[Gap]`, `[Ambiguity]`, `[Conflict]`, `[Assumption]`
    - If no ID system exists: "Is a requirement & acceptance criteria ID scheme established? [Traceability]"
 
    **Surface & Resolve Issues** (Requirements Quality Problems):
    Ask questions about the requirements themselves:
-   - Ambiguities: "Is the term 'fast' quantified with specific metrics? [Ambiguity, Spec §NFR-1]"
+   - Ambiguities: "Is the term 'fast' quantified with specific metrics? [Ambiguity, Intent §NFR-1]"
    - Conflicts: "Do navigation requirements conflict between §FR-10 and §FR-10a? [Conflict]"
    - Assumptions: "Is the assumption of 'always available podcast API' validated? [Assumption]"
    - Dependencies: "Are external podcast API requirements documented? [Dependency, Gap]"
@@ -227,7 +227,7 @@ You **MUST** consider the user input before proceeding (if not empty).
    - ✅ "Are requirements consistent between [section A] and [section B]?"
    - ✅ "Can [requirement] be objectively measured/verified?"
    - ✅ "Are [edge cases/scenarios] addressed in requirements?"
-   - ✅ "Does the spec define [missing aspect]?"
+   - ✅ "Does the intent define [missing aspect]?"
 
 6. **Structure Reference**: Generate the checklist following the canonical template in `templates/checklist-template.md` for title, meta section, category headings, and ID formatting. If template is unavailable, use: H1 title, purpose/created meta lines, `##` category sections containing `- [ ] CHK### <requirement item>` lines with globally incrementing IDs starting at CHK001.
 
@@ -251,12 +251,12 @@ To avoid clutter, use descriptive types and clean up obsolete checklists when do
 
 Sample items (testing the requirements, NOT the implementation):
 
-- "Are visual hierarchy requirements defined with measurable criteria? [Clarity, Spec §FR-1]"
-- "Is the number and positioning of UI elements explicitly specified? [Completeness, Spec §FR-1]"
+- "Are visual hierarchy requirements defined with measurable criteria? [Clarity, Intent §FR-1]"
+- "Is the number and positioning of UI elements explicitly specified? [Completeness, Intent §FR-1]"
 - "Are interaction state requirements (hover, focus, active) consistently defined? [Consistency]"
 - "Are accessibility requirements specified for all interactive elements? [Coverage, Gap]"
 - "Is fallback behavior defined when images fail to load? [Edge Case, Gap]"
-- "Can 'prominent display' be objectively measured? [Measurability, Spec §FR-4]"
+- "Can 'prominent display' be objectively measured? [Measurability, Intent §FR-4]"
 
 **API Requirements Quality:** `api.md`
 
@@ -293,21 +293,21 @@ Sample items:
 **❌ WRONG - These test implementation, not requirements:**
 
 ```markdown
-- [ ] CHK001 - Verify landing page displays 3 episode cards [Spec §FR-001]
-- [ ] CHK002 - Test hover states work correctly on desktop [Spec §FR-003]
-- [ ] CHK003 - Confirm logo click navigates to home page [Spec §FR-010]
-- [ ] CHK004 - Check that related episodes section shows 3-5 items [Spec §FR-005]
+- [ ] CHK001 - Verify landing page displays 3 episode cards [Intent §FR-001]
+- [ ] CHK002 - Test hover states work correctly on desktop [Intent §FR-003]
+- [ ] CHK003 - Confirm logo click navigates to home page [Intent §FR-010]
+- [ ] CHK004 - Check that related episodes section shows 3-5 items [Intent §FR-005]
 ```
 
 **✅ CORRECT - These test requirements quality:**
 
 ```markdown
-- [ ] CHK001 - Are the number and layout of featured episodes explicitly specified? [Completeness, Spec §FR-001]
-- [ ] CHK002 - Are hover state requirements consistently defined for all interactive elements? [Consistency, Spec §FR-003]
-- [ ] CHK003 - Are navigation requirements clear for all clickable brand elements? [Clarity, Spec §FR-010]
-- [ ] CHK004 - Is the selection criteria for related episodes documented? [Gap, Spec §FR-005]
+- [ ] CHK001 - Are the number and layout of featured episodes explicitly specified? [Completeness, Intent §FR-001]
+- [ ] CHK002 - Are hover state requirements consistently defined for all interactive elements? [Consistency, Intent §FR-003]
+- [ ] CHK003 - Are navigation requirements clear for all clickable brand elements? [Clarity, Intent §FR-010]
+- [ ] CHK004 - Is the selection criteria for related episodes documented? [Gap, Intent §FR-005]
 - [ ] CHK005 - Are loading state requirements defined for asynchronous episode data? [Gap]
-- [ ] CHK006 - Can "visual hierarchy" requirements be objectively measured? [Measurability, Spec §FR-001]
+- [ ] CHK006 - Can "visual hierarchy" requirements be objectively measured? [Measurability, Intent §FR-001]
 ```
 
 **Key Differences:**

@@ -5,7 +5,7 @@ description: "Task list template for intent implementation, following modulation
 
 # Tasks: [INTENT NAME]
 
-**Input**: Design documents from `/specs/[###-intent-name]/`
+**Input**: Design documents from `/intents/[###-intent-name]/`
 **Prerequisites**: plan.md (required), intent.md (required for intent stories), research.md, data-model.md, contracts/
 
 **Intent Methodology Application**: Following modulation stage with selected design archetype ([ARCHITECT/HACKER/CRAFTSMAN/SCHOLAR/ZEN_CODER]), applying action tendencies (verbose naming, abstract commenting, scenario-driven testing, as-you-go refactoring).

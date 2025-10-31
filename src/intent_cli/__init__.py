@@ -384,7 +384,7 @@ def callback(ctx: typer.Context):
     """Show banner when no subcommand is provided."""
     if ctx.invoked_subcommand is None and "--help" not in sys.argv and "-h" not in sys.argv:
         show_banner()
-        console.print(Align.center("[dim]Run 'specify --help' for usage information[/dim]"))
+        console.print(Align.center("[dim]Run 'intent --help' for usage information[/dim]"))
         console.print()
 
 def run_command(cmd: list[str], check_return: bool = True, capture: bool = False, shell: bool = False) -> Optional[str]:
@@ -471,7 +471,7 @@ def init_git_repo(project_path: Path, quiet: bool = False) -> Tuple[bool, Option
             console.print("[cyan]Initializing git repository...[/cyan]")
         subprocess.run(["git", "init"], check=True, capture_output=True, text=True)
         subprocess.run(["git", "add", "."], check=True, capture_output=True, text=True)
-        subprocess.run(["git", "commit", "-m", "Initial commit from Specify template"], check=True, capture_output=True, text=True)
+        subprocess.run(["git", "commit", "-m", "Initial commit from Intent template"], check=True, capture_output=True, text=True)
         if not quiet:
             console.print("[green]✓[/green] Git repository initialized")
         return True, None
@@ -885,17 +885,17 @@ def init(
     6. Optionally set up AI assistant commands
     
     Examples:
-        specify init my-project
-        specify init my-project --ai claude
-        specify init my-project --ai copilot --no-git
-        specify init --ignore-agent-tools my-project
-        specify init . --ai claude         # Initialize in current directory
-        specify init .                     # Initialize in current directory (interactive AI selection)
-        specify init --here --ai claude    # Alternative syntax for current directory
-        specify init --here --ai codex
-        specify init --here --ai codebuddy
-        specify init --here
-        specify init --here --force  # Skip confirmation when current directory not empty
+        intent init my-project
+        intent init my-project --ai claude
+        intent init my-project --ai copilot --no-git
+        intent init --ignore-agent-tools my-project
+        intent init . --ai claude         # Initialize in current directory
+        intent init .                     # Initialize in current directory (interactive AI selection)
+        intent init --here --ai claude    # Alternative syntax for current directory
+        intent init --here --ai codex
+        intent init --here --ai codebuddy
+        intent init --here
+        intent init --here --force  # Skip confirmation when current directory not empty
     """
 
     show_banner()
@@ -905,11 +905,11 @@ def init(
         project_name = None  # Clear project_name to use existing validation logic
 
     if here and project_name:
-        console.print("[red]Error:[/red] Cannot specify both project name and --here flag")
+        console.print("[red]Error:[/red] Cannot intent both project name and --here flag")
         raise typer.Exit(1)
 
     if not here and not project_name:
-        console.print("[red]Error:[/red] Must specify either a project name, use '.' for current directory, or use --here flag")
+        console.print("[red]Error:[/red] Must intent either a project name, use '.' for current directory, or use --here flag")
         raise typer.Exit(1)
 
     if here:
@@ -1138,7 +1138,7 @@ def init(
     steps_lines.append(f"{step_num}. Start using slash commands with your AI agent:")
 
     steps_lines.append("   2.1 [cyan]/intent.constitution[/] - Establish project principles")
-    steps_lines.append("   2.2 [cyan]/intent.intent[/] - Create baseline specification")
+    steps_lines.append("   2.2 [cyan]/intent.capture[/] - Create baseline specification")
     steps_lines.append("   2.3 [cyan]/intent.plan[/] - Create implementation plan")
     steps_lines.append("   2.4 [cyan]/intent.tasks[/] - Generate actionable tasks")
     steps_lines.append("   2.5 [cyan]/intent.implement[/] - Execute implementation")
@@ -1148,7 +1148,7 @@ def init(
     console.print(steps_panel)
 
     enhancement_lines = [
-        "Optional commands that you can use for your specs [bright_black](improve quality & confidence)[/bright_black]",
+        "Optional commands that you can use for your intents [bright_black](improve quality & confidence)[/bright_black]",
         "",
         f"○ [cyan]/intent.clarify[/] [bright_black](optional)[/bright_black] - Ask structured questions to de-risk ambiguous areas before planning (run before [cyan]/intent.plan[/] if used)",
         f"○ [cyan]/intent.analyze[/] [bright_black](optional)[/bright_black] - Cross-artifact consistency & alignment report (after [cyan]/intent.tasks[/], before [cyan]/intent.implement[/])",
@@ -1192,7 +1192,7 @@ def check():
 
     console.print(tracker.render())
 
-    console.print("\n[bold green]Specify CLI is ready to use![/bold green]")
+    console.print("\n[bold green]Intent CLI is ready to use![/bold green]")
 
     if not git_ok:
         console.print("[dim]Tip: Install git for repository management[/dim]")

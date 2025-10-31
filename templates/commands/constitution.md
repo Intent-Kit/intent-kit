@@ -27,7 +27,7 @@ Following the intent methodology's layers for constitution establishment:
 **Contextual Continuity:**
 
 - Ensure constitution provides persistent cognitive stance across sessions
-- Guide all subsequent development phases (specify, plan, tasks, implement)
+- Guide all subsequent development phases (intent, plan, tasks, implement)
 
 ## Outline
 
