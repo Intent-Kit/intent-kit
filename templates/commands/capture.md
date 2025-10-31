@@ -156,18 +156,18 @@ Given that intent description, apply the methodology:
 
    **If all items pass**: Mark checklist complete and proceed to step 6
 
-      - **If items fail (excluding [NEEDS CLARIFICATION])**:
-        1. List the failing items and specific issues
-        2. Update the intent to address each issue
-        3. Re-run validation until all items pass (max 3 iterations)
-        4. If still failing after 3 iterations, document remaining issues in checklist notes and warn user
+- **If items fail (excluding [NEEDS CLARIFICATION])**:
+  - List the failing items and specific issues
+  - Update the intent to address each issue
+  - Re-run validation until all items pass (max 3 iterations)
+  - If still failing after 3 iterations, document remaining issues in checklist notes and warn user
 
-      - **If [NEEDS CLARIFICATION] markers remain**:
+- **If [NEEDS CLARIFICATION] markers remain**:
         1. Extract all [NEEDS CLARIFICATION: ...] markers from the intent
         2. **LIMIT CHECK**: If more than 3 markers exist, keep only the 3 most critical (by scope/security/UX impact) and make informed guesses for the rest
         3. For each clarification needed (max 3), present options to user in this format:
 
-           ```markdown
+```markdown
            ## Question [N]: [Topic]
            
            **Context**: [Quote relevant intent section]
@@ -199,7 +199,7 @@ Given that intent description, apply the methodology:
 
    d. **Update Checklist**: After each validation iteration, update the checklist file with current pass/fail status
 
-7. Report completion with branch name, intent file path, checklist results, and readiness for the next phase (`/intent.clarify` or `/intent.plan`).
+e. Report completion with branch name, intent file path, checklist results, and readiness for the next phase (`/intent.clarify` or `/intent.plan`).
 
 **NOTE:** The script creates and checks out the new branch and initializes the intent spec file before writing.
 

@@ -9,9 +9,9 @@
 </p>
 
 <p align="center">
-    <a href="https://github.com/github/intent-kit/actions/workflows/release.yml"><img src="https://github.com/github/intent-kit/actions/workflows/release.yml/badge.svg" alt="Release"/></a>
-    <a href="https://github.com/github/intent-kit/stargazers"><img src="https://img.shields.io/github/stars/github/intent-kit?style=social" alt="GitHub stars"/></a>
-    <a href="https://github.com/github/intent-kit/blob/main/LICENSE"><img src="https://img.shields.io/github/license/github/intent-kit" alt="License"/></a>
+    <a href="https://github.com/Intent-Kit/intent-kit/actions/workflows/release.yml"><img src="https://github.com/Intent-Kit/intent-kit/actions/workflows/release.yml/badge.svg" alt="Release"/></a>
+    <a href="https://github.com/Intent-Kit/intent-kit/stargazers"><img src="https://img.shields.io/github/stars/github/intent-kit?style=social" alt="GitHub stars"/></a>
+    <a href="https://github.com/Intent-Kit/intent-kit/blob/main/LICENSE"><img src="https://img.shields.io/github/license/github/intent-kit" alt="License"/></a>
     <a href="https://github.github.io/intent-kit/"><img src="https://img.shields.io/badge/docs-GitHub_Pages-blue" alt="Documentation"/></a>
 </p>
 
@@ -51,7 +51,7 @@ Choose your preferred installation method:
 Install once and use everywhere:
 
 ```bash
-uv tool install specify-cli --from git+https://github.com/github/intent-kit.git
+uv tool install specify-cli --from git+https://github.com/Intent-Kit/intent-kit.git
 ```
 
 Then use the tool directly:
@@ -64,7 +64,7 @@ intent check
 To upgrade specify run:
 
 ```bash
-uv tool install specify-cli --force --from git+https://github.com/github/intent-kit.git
+uv tool install specify-cli --force --from git+https://github.com/Intent-Kit/intent-kit.git
 ```
 
 #### Option 2: One-time Usage
@@ -72,7 +72,7 @@ uv tool install specify-cli --force --from git+https://github.com/github/intent-
 Run directly without installing:
 
 ```bash
-uvx --from git+https://github.com/github/intent-kit.git intent init <PROJECT_NAME>
+uvx --from git+https://github.com/Intent-Kit/intent-kit.git intent init <PROJECT_NAME>
 ```
 
 **Benefits of persistent installation:**
@@ -622,7 +622,7 @@ rm gcm-linux_amd64.2.6.1.deb
 
 ## 💬 Support
 
-For support, please open a [GitHub issue](https://github.com/github/intent-kit/issues/new). We welcome bug reports, feature requests, and questions about using Intent-Driven Development.
+For support, please open a [GitHub issue](https://github.com/Intent-Kit/intent-kit/issues/new). We welcome bug reports, feature requests, and questions about using Intent-Driven Development.
 
 ## 🙏 Acknowledgements
 

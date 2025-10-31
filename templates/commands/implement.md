@@ -18,6 +18,7 @@ You **MUST** consider the user input before proceeding (if not empty).
 Following the complete intent methodology throughout implementation:
 
 **Full Operational Model Integration:**
+
 - **Impulse**: Validate initial intent capture
 - **Extraction**: Ensure proper intent signals processing
 - **Shaping**: Apply chosen design archetype consistently
@@ -25,6 +26,7 @@ Following the complete intent methodology throughout implementation:
 - **Modulation**: Fine-tune micro-decisions based on methodology principles
 
 **Continuous Application:**
+
 - Adhere to core philosophy: Direction over description, guided agency, contextual continuity
 - Apply selected design archetype throughout coding (architect/hacker/craftsman/scholar/zen_coder)
 - Follow action tendencies: Verbose naming, abstract commenting, scenario-driven testing, as-you-go refactoring
@@ -152,4 +154,3 @@ Following the complete intent methodology throughout implementation:
    - Report final status with summary of completed work
 
 Note: This command assumes a complete task breakdown exists in tasks.md. If tasks are incomplete or missing, suggest running `/intent.tasks` first to regenerate the task list.
-
