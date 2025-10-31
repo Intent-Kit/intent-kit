@@ -10,8 +10,8 @@
 
 <p align="center">
     <a href="https://github.com/Intent-Kit/intent-kit/actions/workflows/release.yml"><img src="https://github.com/Intent-Kit/intent-kit/actions/workflows/release.yml/badge.svg" alt="Release"/></a>
-    <a href="https://github.com/Intent-Kit/intent-kit/stargazers"><img src="https://img.shields.io/github/stars/github/intent-kit?style=social" alt="GitHub stars"/></a>
-    <a href="https://github.com/Intent-Kit/intent-kit/blob/main/LICENSE"><img src="https://img.shields.io/github/license/github/intent-kit" alt="License"/></a>
+    <a href="https://github.com/Intent-Kit/intent-kit/stargazers"><img src="https://img.shields.io/github/stars/Intent-Kit/intent-kit?style=social" alt="GitHub stars"/></a>
+    <a href="https://github.com/Intent-Kit/intent-kit/blob/main/LICENSE"><img src="https://img.shields.io/github/license/Intent-Kit/intent-kit" alt="License"/></a>
     <a href="https://github.github.io/intent-kit/"><img src="https://img.shields.io/badge/docs-GitHub_Pages-blue" alt="Documentation"/></a>
 </p>
 
