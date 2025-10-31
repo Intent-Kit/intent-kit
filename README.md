@@ -1,7 +1,7 @@
 <div align="center">
-    <img src="./media/logo_small.webp" alt="Intent Kit Logo"/>
-    <h1>🌱 Intent Kit</h1>
-    <h3><em>Build high-quality software faster.</em></h3>
+    <img src="./media/logo_small.webp" alt="Intent Templates Logo"/>
+    <h1>🌱 Intent Templates</h1>
+    <h3><em>Spec Kit Templates - 0.0.2 Latest</em></h3>
 </div>
 
 <p align="center">
