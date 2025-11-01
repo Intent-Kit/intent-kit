@@ -15,24 +15,93 @@ You **MUST** consider the user input before proceeding (if not empty).
 
 ## Intent Methodology Application
 
-Following the intent methodology's operational model:
+**CRITICAL**: You MUST actively apply the intent methodology's operational model throughout this command. Do not merely mention the methodology—you must demonstrate its application at each stage.
 
-- **Impulse**: Capture human motivation and tone from the user input
-- **Extraction**: Parse and normalize intent signals into structured form
-- **Shaping**: Weight and merge motives, biases, and modes
-- **Injection**: Integrate intent context into reasoning
-- **Modulation**: Influence micro-decisions during generation
+**Required Operational Model Execution:**
+
+1. **Impulse Stage** (MUST PERFORM):
+   - Read the user input carefully
+   - Identify the human motivation behind the request
+   - Capture the emotional tone (urgency, excitement, concern, etc.)
+   - Document in your reasoning: What is the user's underlying motivation? What tone does their request convey?
+   - **Validation**: Can you articulate why the user wants this feature, not just what they want?
+
+2. **Extraction Stage** (MUST PERFORM):
+   - Parse the natural language into structured intent signals
+   - Extract key concepts: actors (who), actions (what), objects (what things), constraints (when/where/why)
+   - Normalize terminology (map synonyms to canonical terms)
+   - Identify ambiguities explicitly
+   - Document in your reasoning: What are the core intent signals? What concepts did you extract?
+   - **Validation**: Have you converted the natural language into structured signals?
+
+3. **Shaping Stage** (MUST PERFORM):
+   - Weight the motives, biases, and modes based on the extracted signals
+   - Select appropriate design archetype (architect/hacker/craftsman/scholar/zen_coder) based on intent characteristics
+   - Determine implementation mode (hack_fast/refine/audit/polish) based on context
+   - Document in your reasoning: Which archetype did you choose and why? What mode fits this intent?
+   - **Validation**: Have you consciously weighted motives and selected an archetype?
+
+4. **Injection Stage** (MUST PERFORM):
+   - Integrate the intent context into all reasoning
+   - Apply core philosophy: direction_over_description (focus on driving force, not static details)
+   - Apply guided_agency (treat user as collaborator, make informed guesses where appropriate)
+   - Apply contextual_continuity (maintain consistent context throughout)
+   - Document in your reasoning: How did you apply each philosophy principle?
+   - **Validation**: Is your reasoning driven by intent context, not generic patterns?
+
+5. **Modulation Stage** (MUST PERFORM):
+   - Influence micro-decisions during specification generation
+   - Apply action tendencies: verbose naming, abstract commenting, scenario-driven thinking
+   - Apply bias principles: functional purity, minimalist UX, modular composition
+   - Apply rules: simplicity over cleverness, readability is longevity, fail fast refine later
+   - Document in your reasoning: How did modulation influence your micro-decisions?
+   - **Validation**: Are your decisions aligned with the selected archetype and biases?
 
 ## Outline
 
 The text the user typed after `/intent.capture` in the triggering message **is** the intent description. Assume you always have it available in this conversation even if `{ARGS}` appears literally below. Do not ask the user to repeat it unless they provided an empty command.
 
-Given that intent description, apply the methodology:
+**BEFORE proceeding with intent specification, you MUST execute the operational model stages above and document your methodology application.**
+
+Given that intent description, apply the methodology by executing each stage:
+
+**Step 1: Execute Impulse Stage**
+- Read the user's input text
+- Identify: What is the user's underlying motivation? (Not what they asked for, but WHY they need it)
+- Identify: What emotional tone does the request convey? (Urgent? Exciting? Frustrated? Exploratory?)
+- Document your impulse findings before proceeding
+
+**Step 2: Execute Extraction Stage**
+- Parse the natural language into structured signals:
+  - Extract actors (who needs this)
+  - Extract actions (what should happen)
+  - Extract objects (what things are involved)
+  - Extract constraints (when/where/why conditions)
+- Normalize terminology (map "login" to "authentication", "user" to "actor", etc.)
+- Identify explicit ambiguities
+- Document your extraction findings (list extracted signals)
+
+**Step 3: Execute Shaping Stage**
+- Analyze the extracted signals to determine:
+  - **Design Archetype**: Choose architect (scale/complexity), hacker (speed/improvisation), craftsman (quality/perfection), scholar (analysis/documentation), or zen_coder (simplicity/minimalism)
+  - **Implementation Mode**: Determine hack_fast (rapid prototyping), refine (iterative improvement), audit (careful analysis), or polish (perfection)
+- Document your shaping decisions and reasoning
+
+**Step 4: Execute Injection Stage**
+- Apply direction_over_description: Focus on the driving force, not implementation details
+- Apply guided_agency: Make informed guesses based on context, don't ask about reasonable defaults
+- Apply contextual_continuity: Maintain consistent terminology and concepts throughout
+- Document how each philosophy principle influenced your approach
+
+**Step 5: Execute Modulation Stage**
+- Apply action tendencies from your selected archetype
+- Apply bias principles (functional purity, minimalist UX, modular composition)
+- Apply rules (simplicity over cleverness, readability is longevity, fail fast refine later)
+- Document how modulation influenced micro-decisions
+
+**NOW proceed with intent generation:**
 
 - **Extract core intent signals** and generate a concise short name (2-4 words) for the branch:
-
-- Apply impulse stage: Capture human motivation and tone
-- Apply extraction stage: Parse and normalize intent signals from the description
 - Analyze the intent description and extract the most meaningful keywords following direction_over_description principle
 - Create a 2-4 word short name that captures the essence of the intent
 - Use action-noun format when possible (e.g., "add-user-auth", "fix-payment-bug")
@@ -151,6 +220,11 @@ Given that intent description, apply the methodology:
    b. **Run Validation Check**: Review the intent against each checklist item:
       - For each item, determine if it passes or fails
       - Document specific issues found (quote relevant intent sections)
+      - Verify intent structure follows intent-template.md exactly
+      - Verify all mandatory sections are present and complete
+      - Verify no implementation details leak into specification sections
+      - Verify requirements are testable and unambiguous
+      - Verify success criteria are measurable and technology-agnostic
 
    c. **Handle Validation Results**:
 

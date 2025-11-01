@@ -7,26 +7,77 @@ scripts:
 
 ## Intent Methodology Application
 
-Following the intent methodology's quality assurance framework for checklist generation:
+**CRITICAL**: You MUST actively apply the intent methodology's quality assurance framework throughout checklist generation. The methodology must guide how you create validation items.
 
-**Scholar Archetype Focus:**
+**Required Methodology Application:**
 
-- Analytical validation of requirements clarity
-- Reason-driven checklist creation
-- Documented quality assessment criteria
+**Scholar Archetype Focus (MUST PERFORM EXPLICITLY):**
 
-**Quality Validation Principles:**
+1. **Analytical Validation**:
+   - Analyze requirements systematically to identify quality dimensions
+   - Apply analytical thinking to determine what needs validation
+   - Create checklists based on structured analysis, not generic patterns
+   - **Validation**: Can you justify each checklist item analytically?
 
-- Validate core philosophy adherence in requirements
-- Ensure design archetype alignment
-- Check action tendencies implementation (verbose naming, etc.)
-- Confirm rules compliance throughout specifications
+2. **Reason-Driven Checklist Creation**:
+   - For each checklist item, explain WHY it validates quality
+   - Base items on methodology principles, not arbitrary rules
+   - Prioritize items by impact on specification quality
+   - **Validation**: Does each item test a specific quality dimension?
 
-**Contextual Continuity Checks:**
+3. **Documented Quality Assessment**:
+   - Structure checklists to validate methodology application
+   - Include items that verify intent methodology operational model stages
+   - Create items that check core philosophy adherence
+   - **Validation**: Does your checklist validate methodology application?
 
-- Verify consistent intent application
-- Validate methodology integration
-- Ensure bias principles are testable
+**Quality Validation Principles (MUST PERFORM EXPLICITLY):**
+
+1. **Core Philosophy Adherence**:
+   - Create items that verify direction_over_description (focus on driving force)
+   - Create items that verify guided_agency (reasonable defaults used)
+   - Create items that verify contextual_continuity (consistent terminology)
+   - **Validation**: Does your checklist verify philosophy principles?
+
+2. **Design Archetype Alignment**:
+   - Create items that verify archetype selection and application
+   - Check that artifacts reflect archetype traits
+   - Verify archetype consistency across intent.md, plan.md, tasks.md
+   - **Validation**: Does your checklist verify archetype alignment?
+
+3. **Action Tendencies Implementation**:
+   - Create items that verify verbose naming patterns
+   - Check abstract-level commenting approach
+   - Verify scenario-driven thinking
+   - **Validation**: Does your checklist verify action tendencies?
+
+4. **Rules Compliance**:
+   - Create items that verify simplicity over cleverness
+   - Check readability is longevity
+   - Verify fail fast refine later approach
+   - **Validation**: Does your checklist verify methodology rules?
+
+**Contextual Continuity Checks (MUST PERFORM EXPLICITLY):**
+
+1. **Consistent Intent Application**:
+   - Create items that verify terminology consistency
+   - Check that user stories align across artifacts
+   - Verify entities and concepts match between artifacts
+   - **Validation**: Does your checklist verify contextual continuity?
+
+2. **Methodology Integration**:
+   - Create items that verify operational model stages were applied
+   - Check that impulse/extraction stages produced structured signals
+   - Verify shaping stage selected appropriate archetype
+   - Verify injection stage integrated intent context
+   - Verify modulation stage applied action tendencies
+   - **Validation**: Does your checklist verify methodology integration?
+
+3. **Bias Principles Testability**:
+   - Create items that verify functional purity approach
+   - Check minimalist UX principles
+   - Verify modular composition architecture
+   - **Validation**: Does your checklist verify bias principles?
 
 ## Checklist Purpose: "Unit Tests for English"
 

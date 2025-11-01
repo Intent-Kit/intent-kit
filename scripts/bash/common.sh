@@ -154,3 +154,24 @@ EOF
 check_file() { [[ -f "$1" ]] && echo "  ✓ $2" || echo "  ✗ $2"; }
 check_dir() { [[ -d "$1" && -n $(ls -A "$1" 2>/dev/null) ]] && echo "  ✓ $2" || echo "  ✗ $2"; }
 
+# Validate JSON output (non-blocking, logs warning if invalid)
+validate_json() {
+    local json_output="$1"
+    local context="${2:-output}"
+    
+    # Check if we have a JSON parser available (python is most common)
+    if command -v python3 >/dev/null 2>&1; then
+        if ! echo "$json_output" | python3 -m json.tool >/dev/null 2>&1; then
+            echo "[intent] Warning: Invalid JSON in $context" >&2
+            return 1
+        fi
+    elif command -v python >/dev/null 2>&1; then
+        if ! echo "$json_output" | python -m json.tool >/dev/null 2>&1; then
+            echo "[intent] Warning: Invalid JSON in $context" >&2
+            return 1
+        fi
+    fi
+    # If no JSON parser available, skip validation (non-blocking)
+    return 0
+}
+

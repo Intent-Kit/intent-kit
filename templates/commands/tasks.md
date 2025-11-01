@@ -15,25 +15,68 @@ You **MUST** consider the user input before proceeding (if not empty).
 
 ## Intent Methodology Application
 
-Following the intent methodology's modulation stage for task generation:
+**CRITICAL**: You MUST actively apply the intent methodology's modulation stage throughout task generation. The methodology must influence how you create and organize tasks.
 
-**Modulation Stage:**
+**Required Modulation Stage Execution:**
 
-- Influence micro-decisions during task breakdown and ordering
-- Apply design archetype tendencies throughout task creation
-- Maintain contextual continuity with established intent and constitution
+**Before generating tasks, you MUST:**
 
-**Action Tendencies:**
+1. **Re-apply Shaping Stage**:
+   - Re-read intent.md and plan.md
+   - Identify the design archetype selected in plan.md
+   - Understand the implementation mode (hack_fast/refine/audit/polish)
+   - Document: How should the selected archetype influence task breakdown?
+     - **Architect**: Structure tasks for modular, scalable implementation
+     - **Hacker**: Create tasks for rapid iteration and quick wins
+     - **Craftsman**: Create tasks that allow for quality refinement
+     - **Scholar**: Create tasks with clear research and documentation phases
+     - **Zen_Coder**: Create minimal, essential tasks only
 
-- Use verbose naming for task clarity
-- Apply abstract-level commenting for task descriptions
-- Follow scenario-driven testing approach for test tasks
+2. **Apply Modulation to Task Generation**:
 
-**Rules Application:**
+   **Influence Task Breakdown**:
+   - Apply archetype traits to how you decompose work
+   - Architect: Group related functionality, think in interfaces
+   - Hacker: Break into small, quick-to-complete tasks
+   - Craftsman: Include refinement and polish tasks
+   - Scholar: Include research and documentation tasks
+   - Zen_Coder: Minimize task count, essential only
 
-- Simplicity over cleverness in task decomposition
-- Readability is longevity in task descriptions
-- Fail fast refine later through iterative task validation
+   **Influence Task Ordering**:
+   - Apply core philosophy to ordering:
+     - **direction_over_description**: Order tasks by user value, not technical dependencies alone
+     - **guided_agency**: Order to enable early feedback and iteration
+     - **contextual_continuity**: Order to maintain context between related tasks
+   - Apply bias principles to ordering:
+     - **Functional purity**: Order to enable pure function development
+     - **Modular composition**: Order to build independent modules first
+     - **Minimalist UX**: Order user-facing tasks early for feedback
+
+   **Influence Task Descriptions**:
+   - Apply action tendencies to descriptions:
+     - **Verbose naming**: Use clear, descriptive task names
+     - **Abstract commenting**: Describe WHAT and WHY in tasks, not HOW
+     - **Scenario-driven**: Frame tasks in terms of user scenarios
+   - Apply rules to descriptions:
+     - **Simplicity**: Keep task descriptions simple and clear
+     - **Readability**: Write descriptions that are easy to understand later
+     - **Fail fast**: Order tasks to enable early validation
+
+3. **Maintain Contextual Continuity**:
+   - Use terminology from intent.md in task descriptions
+   - Reference user stories from intent.md in tasks
+   - Align task structure with plan.md architecture
+   - Ensure tasks trace back to intent.md requirements
+
+**Modulation Validation Checkpoint**:
+
+Before completing tasks.md, verify:
+- [ ] Task breakdown reflects the selected design archetype from plan.md
+- [ ] Task ordering follows core philosophy (direction_over_description, guided_agency, contextual_continuity)
+- [ ] Task descriptions use terminology from intent.md
+- [ ] Tasks are framed in terms of user scenarios (scenario-driven)
+- [ ] Task structure aligns with plan.md architecture (modular composition)
+- [ ] Tasks enable early validation and iteration (fail fast)
 
 ## Outline
 
@@ -68,13 +111,63 @@ Following the intent methodology's modulation stage for task generation:
    - Parallel execution examples per story
    - Implementation strategy section (MVP first, incremental delivery)
 
-5. **Report**: Output path to generated tasks.md and summary:
+5. **Task Quality Validation** (MANDATORY before reporting):
+
+   **For each generated task, verify:**
+
+   a. **Format Compliance**:
+      - Every task MUST start with `- [ ]` (markdown checkbox)
+      - Every task MUST have a Task ID (T001, T002, etc.)
+      - Every task MUST have a description with exact file path
+      - User story tasks MUST have [US#] label
+      - Parallel tasks MUST have [P] marker
+      - If ANY task fails format check: Fix immediately before proceeding
+
+   b. **Completeness Verification**:
+      - Every user story from intent.md has at least one corresponding task
+      - Every functional requirement has at least one task mapped to it
+      - Every entity from data-model.md (if exists) has at least one task
+      - Every contract/endpoint from contracts/ (if exists) has at least one task
+      - If requirements or entities are missing tasks: Add them before proceeding
+
+   c. **Dependency Validation**:
+      - All task dependencies are valid (referenced tasks exist)
+      - Tasks are ordered correctly (prerequisites come before dependents)
+      - Parallel tasks [P] truly have no dependencies on incomplete tasks
+      - Phase ordering is logical (Setup before Foundational, Foundational before User Stories)
+      - If dependencies invalid: Fix ordering before proceeding
+
+   d. **Clarity Verification**:
+      - Every task description is specific enough for an LLM to implement without additional context
+      - Every task has a clear action verb (Create, Implement, Add, Configure, etc.)
+      - Every task has exact file paths (no vague references like "appropriate file")
+      - Task descriptions match what's needed to fulfill user stories
+      - If tasks unclear: Rewrite descriptions to be more specific
+
+   e. **Coverage Validation**:
+      - Each user story phase is independently testable
+      - Test criteria (if requested) are defined for each user story
+      - All phases have required tasks (Setup, Core, Integration, etc.)
+      - Polish phase includes cross-cutting concerns
+      - If coverage incomplete: Add missing tasks
+
+   f. **Consistency Check**:
+      - Task IDs are sequential with no gaps or duplicates
+      - Naming conventions are consistent across similar tasks
+      - File paths follow project structure from plan.md
+      - Task organization matches user story priorities from intent.md
+      - If inconsistencies found: Fix to maintain consistency
+
+   **CRITICAL**: If ANY validation step fails, fix the issues BEFORE reporting completion. Do NOT report successful generation if tasks have format errors, missing requirements, or invalid dependencies.
+
+6. **Report**: Output path to generated tasks.md and summary:
    - Total task count
    - Task count per user story
    - Parallel opportunities identified
    - Independent test criteria for each story
    - Suggested MVP scope (typically just User Story 1)
    - Format validation: Confirm ALL tasks follow the checklist format (checkbox, ID, labels, file paths)
+   - Validation results: List any issues found and fixed during validation
 
 Context for task generation: {ARGS}
 

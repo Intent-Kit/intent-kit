@@ -20,6 +20,13 @@ description: "Task list template for intent implementation, following modulation
 - **[Story]**: Which intent story this task belongs to (e.g., IS1, IS2, IS3)
 - Include exact file paths in descriptions
 
+**QUALITY VALIDATION HINTS**:
+- Every task MUST have: `- [ ]` checkbox, Task ID (T001, T002...), Description with exact file path
+- Tasks MUST be specific enough for LLM implementation without additional context
+- User story tasks MUST include [US#] or [IS#] label
+- Parallel tasks [P] MUST truly have no dependencies on incomplete tasks
+- File paths MUST match project structure from plan.md
+
 ## Path Conventions
 
 - **Single project**: `src/`, `tests/` at repository root

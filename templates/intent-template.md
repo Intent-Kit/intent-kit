@@ -105,6 +105,13 @@
 <!--
   ACTION REQUIRED: Define measurable success criteria.
   These must be technology-agnostic and measurable.
+  
+  QUALITY VALIDATION HINTS:
+  - Each criterion must be testable without implementation details
+  - Use quantitative metrics (time, count, percentage, volume)
+  - Include qualitative measures (user satisfaction, completion rate)
+  - Avoid vague terms like "fast", "scalable", "intuitive" without metrics
+  - Success criteria should align with functional requirements above
 -->
 
 ### Measurable Outcomes

@@ -15,26 +15,77 @@ You **MUST** consider the user input before proceeding (if not empty).
 
 ## Intent Methodology Application
 
-Following the intent methodology's validation principles for analysis:
+**CRITICAL**: You MUST actively apply the intent methodology's validation principles throughout analysis. The methodology must guide how you identify issues and validate artifacts.
 
-**Scholar Archetype Application:**
+**Required Methodology Application:**
 
-- Analytical approach to cross-artifact consistency
-- Reason-driven validation of methodological adherence
-- Documented assessment of intent integrity
+**Scholar Archetype Application (MUST PERFORM EXPLICITLY):**
 
-**Quality Assurance Framework:**
+1. **Analytical Approach**:
+   - Apply analytical reasoning to identify inconsistencies
+   - Use systematic comparison across artifacts
+   - Document evidence for each finding (quote specific sections)
+   - **Validation**: Can you provide specific evidence for each issue?
 
-- Validate adherence to core philosophy across all artifacts
-- Ensure design archetype consistency throughout the stack
-- Verify action tendencies are properly applied (verbose naming, abstract commenting, etc.)
-- Confirm rules compliance: Simplicity, readability, iterative refinement
+2. **Reason-Driven Validation**:
+   - For each finding, explain WHY it's an issue (not just WHAT is wrong)
+   - Trace each issue to methodology principle violations
+   - Justify severity assignment with reasoning
+   - **Validation**: Can you explain why each finding matters?
 
-**Contextual Continuity Validation:**
+3. **Documented Assessment**:
+   - Provide structured evidence for each finding
+   - Include location references (file:line)
+   - Explain impact on intent integrity
+   - **Validation**: Is your assessment well-documented?
 
-- Check that all artifacts maintain consistent intent context
-- Validate that methodology layers are properly integrated
-- Ensure bias principles are consistently applied
+**Quality Assurance Framework (MUST PERFORM EXPLICITLY):**
+
+1. **Core Philosophy Validation**:
+   - Check direction_over_description: Are requirements focused on driving force?
+   - Check guided_agency: Are reasonable defaults used without over-asking?
+   - Check contextual_continuity: Is terminology consistent across artifacts?
+   - **Validation**: Can you verify each philosophy principle is followed?
+
+2. **Design Archetype Consistency**:
+   - Identify the archetype selected in plan.md
+   - Verify intent.md, plan.md, and tasks.md align with archetype approach
+   - Check if archetype traits are reflected in all artifacts
+   - **Validation**: Is the archetype consistently applied?
+
+3. **Action Tendencies Validation**:
+   - Verify verbose naming patterns in tasks.md and plan.md
+   - Check for abstract-level commenting guidance
+   - Verify scenario-driven thinking in intent.md and tasks.md
+   - **Validation**: Are action tendencies evident in artifacts?
+
+4. **Rules Compliance**:
+   - Verify simplicity over cleverness (no over-engineering)
+   - Verify readability is longevity (clear, understandable)
+   - Verify fail fast refine later (incremental, testable approach)
+   - **Validation**: Do artifacts follow methodology rules?
+
+**Contextual Continuity Validation (MUST PERFORM EXPLICITLY):**
+
+1. **Consistent Intent Context**:
+   - Verify terminology matches between intent.md, plan.md, and tasks.md
+   - Check that user stories from intent.md appear in tasks.md
+   - Verify entities from intent.md appear in plan.md data-model.md
+   - **Validation**: Is context maintained across artifacts?
+
+2. **Methodology Integration**:
+   - Verify operational model stages were applied:
+     - Impulse/Extraction: Are intent signals clear and structured?
+     - Shaping: Is design archetype selected and applied?
+     - Injection: Is intent context integrated in all artifacts?
+     - Modulation: Are action tendencies and biases applied?
+   - **Validation**: Can you trace methodology application in artifacts?
+
+3. **Bias Principles Consistency**:
+   - Verify functional purity approach in plan.md and tasks.md
+   - Check minimalist UX approach in intent.md user stories
+   - Verify modular composition in plan.md architecture
+   - **Validation**: Are bias principles consistently applied?
 
 ## Goal
 
@@ -103,6 +154,12 @@ Create internal representations (do not include raw artifacts in output):
 
 Focus on high-signal findings. Limit to 50 findings total; aggregate remainder in overflow summary.
 
+**CRITICAL**: Prioritize findings that would cause implementation bugs:
+- Task format errors (would break task parsing)
+- Missing file paths (would cause implementation to fail)
+- Invalid dependencies (would cause execution order errors)
+- Missing requirements coverage (would cause incomplete implementation)
+
 #### A. Duplication Detection
 
 - Identify near-duplicate requirements
@@ -136,6 +193,15 @@ Focus on high-signal findings. Limit to 50 findings total; aggregate remainder i
 - Data entities referenced in plan but absent in intent (or vice versa)
 - Task ordering contradictions (e.g., integration tasks before foundational setup tasks without dependency note)
 - Conflicting requirements (e.g., one requires Next.js while other specifies Vue)
+
+#### G. Task Quality Issues
+
+- Tasks with incomplete descriptions (missing file paths, vague actions)
+- Tasks missing required format components (checkbox, ID, labels)
+- Tasks with invalid dependencies (referencing non-existent tasks)
+- Tasks with incorrect parallel markers [P] (has dependencies but marked parallel)
+- Tasks missing user story labels [US#] when required
+- Tasks with file paths that don't match project structure in plan.md
 
 ### 5. Severity Assignment
 

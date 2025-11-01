@@ -15,25 +15,74 @@ You **MUST** consider the user input before proceeding (if not empty).
 
 ## Intent Methodology Application
 
-Following the intent methodology's extraction and shaping stages for clarification:
+**CRITICAL**: You MUST actively apply the intent methodology's extraction and shaping stages throughout clarification. The methodology must guide how you identify gaps and integrate clarifications.
 
-**Extraction Stage Refinement:**
+**Required Methodology Execution:**
 
-- Parse and normalize intent signals to identify gaps
-- Extract missing context from user clarification responses
-- Refine intent signals based on clarified information
+**Stage 1: Extraction Stage Refinement (MUST PERFORM EXPLICITLY)**
 
-**Shaping Stage Integration:**
+When identifying clarification needs, you MUST:
 
-- Weight clarified motives, biases, and modes
-- Apply guided_agency to incorporate user feedback
-- Form refined implementation approach based on clarifications
+1. **Re-parse Intent Signals**:
+   - Re-read intent.md with extraction mindset
+   - Identify gaps in structured signals (missing actors, actions, objects, constraints)
+   - Normalize terminology to find inconsistencies
+   - Document: What signals are incomplete or ambiguous?
 
-**Contextual Continuity Maintenance:**
+2. **Apply Extraction to Gap Analysis**:
+   - For each ambiguity, identify which intent signal is missing:
+     - Missing actor? (Who needs this feature)
+     - Missing action? (What should happen)
+     - Missing object? (What things are involved)
+     - Missing constraint? (When/where/why conditions)
+   - Prioritize gaps by impact on implementation
+   - Document extraction findings before asking questions
 
-- Ensure clarifications maintain consistent intent context
-- Validate that answers align with established methodology principles
-- Preserve intent integrity throughout clarification process
+**Stage 2: Shaping Stage Integration (MUST PERFORM EXPLICITLY)**
+
+When integrating clarifications, you MUST:
+
+1. **Re-weight Motives, Biases, and Modes**:
+   - Analyze clarification answers to determine if archetype selection needs adjustment
+   - Determine if implementation mode should change based on clarified priorities
+   - Document: How do clarifications affect shaping decisions?
+
+2. **Apply Guided Agency**:
+   - When user provides clarification, incorporate it guided_agency style:
+     - Make informed interpretations of their answer
+     - Apply reasonable defaults for implied details
+     - Don't ask follow-up questions for obvious interpretations
+   - Document: How did you apply guided_agency to interpret clarifications?
+
+3. **Form Refined Approach**:
+   - Update understanding of implementation approach based on clarifications
+   - Adjust archetype selection if clarifications reveal different priorities
+   - Document: How did clarifications refine your approach?
+
+**Stage 3: Contextual Continuity Maintenance (MUST PERFORM EXPLICITLY)**
+
+When updating intent.md with clarifications, you MUST:
+
+1. **Maintain Consistent Context**:
+   - Integrate clarifications using terminology from original intent.md
+   - Preserve intent.md structure and organization
+   - Ensure clarifications align with existing user stories and requirements
+   - Document: How did you maintain context while adding clarifications?
+
+2. **Validate Methodology Alignment**:
+   - Ensure clarified requirements align with core philosophy
+   - Verify clarifications don't violate bias principles
+   - Confirm clarifications support selected design archetype
+   - Document: How do clarifications align with methodology?
+
+**Clarification Integration Validation**:
+
+After integrating each clarification, verify:
+- [ ] Clarification maintains terminology consistency with intent.md
+- [ ] Clarification aligns with selected design archetype
+- [ ] Clarification supports core philosophy (direction_over_description, guided_agency, contextual_continuity)
+- [ ] Clarification preserves intent.md structure
+- [ ] Clarification doesn't contradict existing requirements
 
 ## Outline
 
@@ -178,6 +227,14 @@ Execution steps:
    - No contradictory earlier statement remains (scan for now-invalid alternative choices removed).
    - Markdown structure valid; only allowed new headings: `## Clarifications`, `### Session YYYY-MM-DD`.
    - Terminology consistency: same canonical term used across all updated sections.
+
+   **Intent Quality Validation** (after all clarifications integrated):
+   - All clarifications are integrated into appropriate sections (not just in Clarifications section)
+   - No placeholder text or TODO markers remain from clarifications
+   - Updated sections maintain intent.md template structure
+   - Requirements remain testable and unambiguous
+   - Success criteria remain measurable
+   - If validation fails: Fix intent.md structure and content before reporting completion
 
 7. Write the updated intent back to `FEATURE_SPEC`.
 

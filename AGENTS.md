@@ -4,10 +4,12 @@
 
 ```yaml
 intent_methodology:
-  version: 1.0
+  version: 2.0
   description: >
     Defines the philosophy, directional layers, and behavioral stance
     that guide AI cognition and decision-making in code generation.
+    Enhanced with quality gates, feedback loops, validation, and 
+    context preservation mechanisms to prevent bugs and ensure quality.
 
   core_philosophy:
     - direction_over_description: "Define the driving force, not static instructions."
@@ -76,14 +78,151 @@ intent_methodology:
     stages:
       - name: impulse
         description: "Capture human motivation or tone."
+        quality_gates:
+          - "Can articulate WHY the user wants this (not just WHAT)"
+          - "Captured emotional tone or motivation (urgency, excitement, concern, etc.)"
+          - "Identified underlying human need being addressed"
+        anti_patterns:
+          - "Focusing on WHAT instead of WHY"
+          - "Ignoring emotional context or urgency signals"
+          - "Jumping to technical solutions before understanding motivation"
+        dependencies: []
+        outputs: ["human_motivation", "emotional_tone", "driving_force"]
+        
       - name: extraction
-        description: "Parse and normalize intent signals."
+        description: "Parse and normalize intent signals into structured form."
+        quality_gates:
+          - "Extracted all key signals: actors (who), actions (what), objects (what things), constraints (when/where/why)"
+          - "Normalized terminology (synonyms mapped to canonical terms)"
+          - "Identified explicit ambiguities (not guessed)"
+        anti_patterns:
+          - "Guessing ambiguous requirements instead of marking them"
+          - "Missing key signals (actors, actions, objects, constraints)"
+          - "Inconsistent terminology (same concept named differently)"
+        dependencies: ["impulse"]
+        outputs: ["structured_signals", "normalized_terminology", "ambiguity_markers"]
+        
       - name: shaping
-        description: "Weight and merge motives, biases, and modes."
+        description: "Weight and merge motives, biases, and modes to form implementation approach."
+        quality_gates:
+          - "Selected design archetype based on intent signals (architect/hacker/craftsman/scholar/zen_coder)"
+          - "Determined implementation mode (hack_fast/refine/audit/polish)"
+          - "Documented archetype selection reasoning"
+        anti_patterns:
+          - "Selecting archetype without analyzing intent signals"
+          - "Using wrong archetype for intent characteristics (e.g., hacker for complex system)"
+          - "Not documenting archetype selection reasoning"
+        dependencies: ["impulse", "extraction"]
+        outputs: ["design_archetype", "implementation_mode", "shaping_rationale"]
+        
       - name: injection
-        description: "Integrate intent context into AI reasoning."
+        description: "Integrate intent context into AI reasoning and decision-making."
+        quality_gates:
+          - "Applied direction_over_description (focus on driving force, not implementation details)"
+          - "Applied guided_agency (made informed choices, didn't over-ask)"
+          - "Applied contextual_continuity (maintained consistent terminology and concepts)"
+        anti_patterns:
+          - "Focusing on implementation details instead of driving force"
+          - "Asking about obvious defaults instead of making informed choices"
+          - "Using inconsistent terminology across artifacts"
+        dependencies: ["impulse", "extraction", "shaping"]
+        outputs: ["integrated_context", "philosophy_applied", "consistent_terminology"]
+        
       - name: modulation
-        description: "Influence micro-decisions during generation."
+        description: "Influence micro-decisions during generation based on methodology principles."
+        quality_gates:
+          - "Applied action tendencies (verbose naming, abstract commenting, scenario-driven testing)"
+          - "Applied bias principles (functional purity, minimalist UX, modular composition)"
+          - "Applied rules (simplicity, readability, fail fast)"
+        anti_patterns:
+          - "Ignoring action tendencies (using vague names, implementation-level comments)"
+          - "Violating bias principles (impure functions, complex UX, monolithic structure)"
+          - "Violating rules (over-engineering, unreadable code, premature optimization)"
+        dependencies: ["impulse", "extraction", "shaping", "injection"]
+        outputs: ["code_generated", "methodology_aligned", "quality_validated"]
+        
+      - name: validation
+        description: "Validate methodology application and catch issues before proceeding."
+        quality_gates:
+          - "Verified all previous stages were applied correctly"
+          - "Confirmed methodology alignment (philosophy, archetype, biases applied)"
+          - "Checked for common bug patterns and anti-patterns"
+        anti_patterns:
+          - "Skipping validation before proceeding to next stage"
+          - "Not checking for methodology violations"
+          - "Not catching common bug patterns early"
+        dependencies: ["impulse", "extraction", "shaping", "injection", "modulation"]
+        outputs: ["validation_report", "issues_found", "methodology_compliance"]
+    
+    feedback_loops:
+      - name: "extraction_to_impulse"
+        description: "If extraction reveals unclear motivation, return to impulse to clarify"
+        trigger: "Missing or ambiguous human motivation in extracted signals"
+        action: "Re-apply impulse stage to capture clearer motivation"
+        
+      - name: "shaping_to_extraction"
+        description: "If shaping can't determine archetype, return to extraction to refine signals"
+        trigger: "Insufficient signals to select appropriate archetype"
+        action: "Re-apply extraction stage to identify missing signals"
+        
+      - name: "injection_to_shaping"
+        description: "If injection reveals context gaps, return to shaping to refine approach"
+        trigger: "Context inconsistencies or missing integration points"
+        action: "Re-apply shaping stage to refine archetype selection or mode"
+        
+      - name: "modulation_to_injection"
+        description: "If modulation reveals context issues, return to injection to refine integration"
+        trigger: "Code doesn't align with intent context or philosophy"
+        action: "Re-apply injection stage to strengthen context integration"
+        
+      - name: "validation_refinement"
+        description: "If validation finds issues, return to appropriate earlier stage"
+        trigger: "Validation fails quality gates or finds anti-patterns"
+        action: "Identify root cause stage and re-apply from that point"
+    
+    stage_transitions:
+      impulse_to_extraction:
+        required_outputs: ["human_motivation", "emotional_tone"]
+        handoff_criteria: "Motivation and tone clearly captured"
+        
+      extraction_to_shaping:
+        required_outputs: ["structured_signals", "normalized_terminology"]
+        handoff_criteria: "All key signals extracted and normalized"
+        
+      shaping_to_injection:
+        required_outputs: ["design_archetype", "implementation_mode"]
+        handoff_criteria: "Archetype selected with documented reasoning"
+        
+      injection_to_modulation:
+        required_outputs: ["integrated_context", "philosophy_applied"]
+        handoff_criteria: "Intent context fully integrated, philosophy applied"
+        
+      modulation_to_validation:
+        required_outputs: ["code_generated", "methodology_aligned"]
+        handoff_criteria: "Code generated with methodology principles applied"
+        
+      validation_to_complete:
+        required_outputs: ["validation_report", "methodology_compliance"]
+        handoff_criteria: "All quality gates passed, no anti-patterns found"
+    
+    context_preservation:
+      required_artifacts:
+        - "human_motivation: Preserved from impulse stage"
+        - "structured_signals: Preserved from extraction stage"
+        - "design_archetype: Preserved from shaping stage"
+        - "integrated_context: Preserved from injection stage"
+        - "methodology_alignment: Preserved from modulation stage"
+      
+      preservation_mechanisms:
+        - "Explicit documentation at each stage transition"
+        - "Terminology glossary maintained across stages"
+        - "Archetype selection documented and referenced"
+        - "Philosophy application verified at each stage"
+        
+      session_continuity:
+        - "Constitution defines persistent cognitive stance"
+        - "Intent artifacts (intent.md, plan.md, tasks.md) preserve context"
+        - "Methodology application verified at start of each session"
 
   meta:
     created_by: "aicode"

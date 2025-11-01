@@ -86,8 +86,13 @@ check_feature_branch "$CURRENT_BRANCH" "$HAS_GIT" || exit 1
 if $PATHS_ONLY; then
     if $JSON_MODE; then
         # Minimal JSON paths payload (no validation performed)
-        printf '{"REPO_ROOT":"%s","BRANCH":"%s","FEATURE_DIR":"%s","INTENT_SPEC":"%s","IMPL_PLAN":"%s","TASKS":"%s"}\n' \
-            "$REPO_ROOT" "$CURRENT_BRANCH" "$FEATURE_DIR" "$INTENT_SPEC" "$IMPL_PLAN" "$TASKS"
+        json_output=$(printf '{"REPO_ROOT":"%s","BRANCH":"%s","FEATURE_DIR":"%s","INTENT_SPEC":"%s","IMPL_PLAN":"%s","TASKS":"%s"}\n' \
+            "$REPO_ROOT" "$CURRENT_BRANCH" "$FEATURE_DIR" "$INTENT_SPEC" "$IMPL_PLAN" "$TASKS")
+        
+        # Validate JSON (non-blocking, only warns)
+        validate_json "$json_output" "paths-only output" || true
+        
+        printf '%s\n' "$json_output"
     else
         echo "REPO_ROOT: $REPO_ROOT"
         echo "BRANCH: $CURRENT_BRANCH"
@@ -148,7 +153,13 @@ if $JSON_MODE; then
         json_docs="[${json_docs%,}]"
     fi
     
-    printf '{"FEATURE_DIR":"%s","AVAILABLE_DOCS":%s}\n' "$FEATURE_DIR" "$json_docs"
+    # Generate JSON output
+    json_output=$(printf '{"FEATURE_DIR":"%s","AVAILABLE_DOCS":%s}\n' "$FEATURE_DIR" "$json_docs")
+    
+    # Validate JSON (non-blocking, only warns)
+    validate_json "$json_output" "check-prerequisites output" || true
+    
+    printf '%s\n' "$json_output"
 else
     # Text output
     echo "FEATURE_DIR:$FEATURE_DIR"
