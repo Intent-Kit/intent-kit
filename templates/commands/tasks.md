@@ -71,6 +71,7 @@ You **MUST** consider the user input before proceeding (if not empty).
 **Modulation Validation Checkpoint**:
 
 Before completing tasks.md, verify:
+
 - [ ] Task breakdown reflects the selected design archetype from plan.md
 - [ ] Task ordering follows core philosophy (direction_over_description, guided_agency, contextual_continuity)
 - [ ] Task descriptions use terminology from intent.md

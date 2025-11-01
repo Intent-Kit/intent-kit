@@ -65,13 +65,15 @@ The text the user typed after `/intent.capture` in the triggering message **is**
 
 Given that intent description, apply the methodology by executing each stage:
 
-**Step 1: Execute Impulse Stage**
+### Step 1: Execute Impulse Stage
+
 - Read the user's input text
 - Identify: What is the user's underlying motivation? (Not what they asked for, but WHY they need it)
 - Identify: What emotional tone does the request convey? (Urgent? Exciting? Frustrated? Exploratory?)
 - Document your impulse findings before proceeding
 
-**Step 2: Execute Extraction Stage**
+### Step 2: Execute Extraction Stage
+
 - Parse the natural language into structured signals:
   - Extract actors (who needs this)
   - Extract actions (what should happen)
@@ -81,19 +83,22 @@ Given that intent description, apply the methodology by executing each stage:
 - Identify explicit ambiguities
 - Document your extraction findings (list extracted signals)
 
-**Step 3: Execute Shaping Stage**
+### Step 3: Execute Shaping Stage
+
 - Analyze the extracted signals to determine:
   - **Design Archetype**: Choose architect (scale/complexity), hacker (speed/improvisation), craftsman (quality/perfection), scholar (analysis/documentation), or zen_coder (simplicity/minimalism)
   - **Implementation Mode**: Determine hack_fast (rapid prototyping), refine (iterative improvement), audit (careful analysis), or polish (perfection)
 - Document your shaping decisions and reasoning
 
-**Step 4: Execute Injection Stage**
+### Step 4: Execute Injection Stage
+
 - Apply direction_over_description: Focus on the driving force, not implementation details
 - Apply guided_agency: Make informed guesses based on context, don't ask about reasonable defaults
 - Apply contextual_continuity: Maintain consistent terminology and concepts throughout
 - Document how each philosophy principle influenced your approach
 
-**Step 5: Execute Modulation Stage**
+### Step 5: Execute Modulation Stage
+
 - Apply action tendencies from your selected archetype
 - Apply bias principles (functional purity, minimalist UX, modular composition)
 - Apply rules (simplicity over cleverness, readability is longevity, fail fast refine later)
@@ -288,11 +293,13 @@ e. Report completion with branch name, intent file path, checklist results, and 
 - Written for intent capture, not technical implementation
 - DO NOT create any checklists that are embedded in the intent intent. That will be a separate command.
 
+
 ### Section Requirements
 
 - **Mandatory sections**: Must be completed for every intent capture
 - **Optional sections**: Include only when relevant to the intent
 - When a section doesn't apply, remove it entirely (don't leave as "N/A")
+
 
 ### For AI Generation (Intent Methodology Integration)
 
@@ -307,9 +314,10 @@ When capturing intent from a user prompt:
 - **Document assumptions**: Record reasonable defaults in the Assumptions section
 - **Limit clarifications**: Maximum 3 [NEEDS CLARIFICATION] markers - use only for critical decisions that:
 
-- Significantly impact intent scope or user experience
-- Have multiple reasonable interpretations with different implications
+  - Significantly impact intent scope or user experience
+  - Have multiple reasonable interpretations with different implications
   - Lack any reasonable default
+
 
 - **Prioritize clarifications**: scope > security/privacy > user experience > technical details
 - **Think like intent validator**: Every vague intent should fail the "testable and unambiguous" checklist item
@@ -325,6 +333,7 @@ When capturing intent from a user prompt:
 - Error handling: User-friendly messages with appropriate fallbacks
 - Authentication method: Standard session-based or OAuth2 for web apps
 - Integration patterns: RESTful APIs unless specified otherwise
+
 
 ### Success Criteria Guidelines
 

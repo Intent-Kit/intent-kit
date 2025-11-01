@@ -155,6 +155,7 @@ Create internal representations (do not include raw artifacts in output):
 Focus on high-signal findings. Limit to 50 findings total; aggregate remainder in overflow summary.
 
 **CRITICAL**: Prioritize findings that would cause implementation bugs:
+
 - Task format errors (would break task parsing)
 - Missing file paths (would cause implementation to fail)
 - Invalid dependencies (would cause execution order errors)

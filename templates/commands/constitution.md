@@ -91,6 +91,7 @@ You **MUST** consider the user input before proceeding (if not empty).
 **Methodology Validation Checkpoint:**
 
 Before completing constitution.md, verify:
+
 - [ ] Motive layer captures WHY (driving force), not WHAT (features)
 - [ ] Principles express direction_over_description (guidance, not prescriptions)
 - [ ] Rules are declarative, testable, and actionable
@@ -180,8 +181,9 @@ Follow this execution flow, applying intent methodology layers:
    - Follow-up TODOs if any placeholders intentionally deferred.
 
 6. **Methodology Validation** (before final output):
-   
+
    **Constitution Quality Validation**:
+
    - [ ] Motive layer captures WHY (driving force), not WHAT (features)
    - [ ] Principles express direction_over_description (guidance, not prescriptions)
    - [ ] Rules are declarative, testable, and actionable
@@ -189,8 +191,9 @@ Follow this execution flow, applying intent methodology layers:
    - [ ] Action tendencies guide code generation style
    - [ ] Constitution will provide consistent guidance across all phases
    - [ ] Constitution aligns with intent methodology framework
-   
+
    **Technical Validation**:
+
    - [ ] No remaining unexplained bracket tokens
    - [ ] Version line matches report
    - [ ] Dates ISO format YYYY-MM-DD

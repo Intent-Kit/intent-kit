@@ -21,6 +21,7 @@ description: "Task list template for intent implementation, following modulation
 - Include exact file paths in descriptions
 
 **QUALITY VALIDATION HINTS**:
+
 - Every task MUST have: `- [ ]` checkbox, Task ID (T001, T002...), Description with exact file path
 - Tasks MUST be specific enough for LLM implementation without additional context
 - User story tasks MUST include [US#] or [IS#] label

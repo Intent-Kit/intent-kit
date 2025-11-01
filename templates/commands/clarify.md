@@ -19,7 +19,7 @@ You **MUST** consider the user input before proceeding (if not empty).
 
 **Required Methodology Execution:**
 
-**Stage 1: Extraction Stage Refinement (MUST PERFORM EXPLICITLY)**
+### Stage 1: Extraction Stage Refinement (MUST PERFORM EXPLICITLY)
 
 When identifying clarification needs, you MUST:
 
@@ -38,7 +38,7 @@ When identifying clarification needs, you MUST:
    - Prioritize gaps by impact on implementation
    - Document extraction findings before asking questions
 
-**Stage 2: Shaping Stage Integration (MUST PERFORM EXPLICITLY)**
+### Stage 2: Shaping Stage Integration (MUST PERFORM EXPLICITLY)
 
 When integrating clarifications, you MUST:
 
@@ -59,7 +59,7 @@ When integrating clarifications, you MUST:
    - Adjust archetype selection if clarifications reveal different priorities
    - Document: How did clarifications refine your approach?
 
-**Stage 3: Contextual Continuity Maintenance (MUST PERFORM EXPLICITLY)**
+### Stage 3: Contextual Continuity Maintenance (MUST PERFORM EXPLICITLY)
 
 When updating intent.md with clarifications, you MUST:
 
@@ -78,6 +78,7 @@ When updating intent.md with clarifications, you MUST:
 **Clarification Integration Validation**:
 
 After integrating each clarification, verify:
+
 - [ ] Clarification maintains terminology consistency with intent.md
 - [ ] Clarification aligns with selected design archetype
 - [ ] Clarification supports core philosophy (direction_over_description, guided_agency, contextual_continuity)
