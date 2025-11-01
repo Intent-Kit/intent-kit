@@ -1,9 +1,9 @@
 # Intent Kit
 
 <div align="center">
-    <img src="./media/logo_small.webp" alt="Intent Templates Logo"/>
-    <h1>🌱 Intent Templates</h1>
-    <h3><em>Intent Kit Templates - 0.0.2 Latest</em></h3>
+    <img src="./media/logo.svg" alt="Intent Templates Logo"/>
+    <h1>⚙️ Intent Templates</h1>
+    <h3><em>Intent Kit Templates - 0.0.13 Latest</em></h3>
 </div>
 
 <p align="center">
