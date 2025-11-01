@@ -10,7 +10,7 @@ scripts:
 This command generates a comprehensive report of the Intent Kit Reliability Index, which measures:
 
 - **% of runs passing validation first try** (success rate)
-- **Average retries needed per run** 
+- **Average retries needed per run**
 - **Average quality score** of generated content
 - **Daily tracking** of metrics
 - **Trend analysis** over time

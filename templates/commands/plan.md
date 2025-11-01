@@ -211,7 +211,7 @@ Throughout plan generation, you MUST:
    - If validation passes (`status: pass`), proceed to run report generation
    - If validation fails (`status: fail`), continue to repair step
 
-2. **Repair Content (if needed)**: Execute `{REPAIR_SCRIPT} --file PLAN_FILE --content-type plan` 
+2. **Repair Content (if needed)**: Execute `{REPAIR_SCRIPT} --file PLAN_FILE --content-type plan`
    - Re-validate the repaired content
    - If re-validation passes, proceed to run report generation
    - If re-validation fails, document issues and proceed to run report with `status: repaired`
@@ -227,7 +227,8 @@ Throughout plan generation, you MUST:
 **Upon completion of planning, generate and save run report:**
 
 - **Create run_report.json**: After all plan artifacts are written and validated
-- **Structure**: 
+- **Structure**:
+
   ```json
   {
     "intent_id": "<FEATURE_DIR_NAME>",
@@ -238,11 +239,13 @@ Throughout plan generation, you MUST:
     "timestamp": "2025-11-01T08:45:00Z"
   }
   ```
+
 - **Save location**: `.intent/metrics/run_report_<TIMESTAMP>.json` where TIMESTAMP is YYYYMMDD_HHMMSS
 - **Implementation**: Execute `{SAVE_RUN_REPORT_SCRIPT}` with appropriate parameters
 - **Validate**: Ensure metrics directory exists at `.intent/metrics/`
 
 **Script Execution**:
+
 - Bash: `{SAVE_RUN_REPORT_SCRIPT} --intent-id <FEATURE_DIR_NAME> --status pass --validator-pass-rate 1.0 --retries 0 --score 100`
 - PowerShell: `{SAVE_RUN_REPORT_SCRIPT} -IntentId <FEATURE_DIR_NAME> -Status pass -ValidatorPassRate 1.0 -Retries 0 -Score 100`
 
@@ -256,6 +259,7 @@ Throughout plan generation, you MUST:
 - **Overall index**: Updated in `.intent/metrics/reliability-index.json`
 
 **Script Execution**:
+
 - Bash: `{SH} [success|run] [retries_count] [score_value]`
   - Use "success" if validation passed on first try, "run" otherwise
   - Pass number of retries performed during validation/repair
@@ -271,5 +275,6 @@ Throughout plan generation, you MUST:
 - **Apply improvement strategies**: Adjust generation approach based on learned patterns
 
 **Script Execution**:
+
 - Bash: `{SH}`
 - PowerShell: `{PS}` (no parameters needed)

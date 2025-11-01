@@ -10,6 +10,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/intent/v2.0
 ## [0.0.11] - 2025-11-01
 
 ### Added
+
 - **Adaptive Intelligence System**: Intent Kit now learns from its mistakes and improves over time
 - **Metrics Tracking**: Comprehensive tracking of success rates, retries, and quality scores
 - **Self-Learning Loop**: System analyzes patterns and adapts generation approach based on historical data
@@ -22,12 +23,14 @@ and this project adheres to [Semantic Versioning](https://semver.org/intent/v2.0
 - **All commands updated**: `/intent.capture`, `/intent.plan`, `/intent.tasks`, `/intent.implement`, `/intent.clarify`, `/intent.constitution`, `/intent.checklist`, `/intent.analyze` now include the complete learning loop
 
 ### Changed
+
 - All command templates now include validation → repair → metrics tracking → adaptive learning sequence
 - Validation scripts enhanced to identify specific failure patterns for learning
 - Repair scripts now store learning patterns from performed fixes
 - Documentation updated to reflect adaptive intelligence capabilities
 
 ### Fixed
+
 - Markdown linting errors across all template files
 - Run report generation for all command templates
 - Validation and repair loop integration in all commands

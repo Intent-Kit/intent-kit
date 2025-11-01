@@ -245,7 +245,7 @@ Do not create a new template; always operate on the existing `/memory/constituti
    - If validation passes (`status: pass`), proceed to run report generation
    - If validation fails (`status: fail`), continue to repair step
 
-2. **Repair Content (if needed)**: Execute `{REPAIR_SCRIPT} --file "/memory/constitution.md" --content-type constitution` 
+2. **Repair Content (if needed)**: Execute `{REPAIR_SCRIPT} --file "/memory/constitution.md" --content-type constitution`
    - Re-validate the repaired content
    - If re-validation passes, proceed to run report generation
    - If re-validation fails, document issues and proceed to run report with `status: repaired`
@@ -261,7 +261,8 @@ Do not create a new template; always operate on the existing `/memory/constituti
 **Upon completion of constitution update, generate and save run report:**
 
 - **Create run_report.json**: After constitution file is updated and validation complete
-- **Structure**: 
+- **Structure**:
+
   ```json
   {
     "intent_id": "<FEATURE_DIR_NAME>",
@@ -272,11 +273,13 @@ Do not create a new template; always operate on the existing `/memory/constituti
     "timestamp": "2025-11-01T08:45:00Z"
   }
   ```
+
 - **Save location**: `.intent/metrics/run_report_<TIMESTAMP>.json` where TIMESTAMP is YYYYMMDD_HHMMSS
 - **Implementation**: Execute `{SAVE_RUN_REPORT_SCRIPT}` with appropriate parameters
 - **Validate**: Ensure metrics directory exists at `.intent/metrics/`
 
 **Script Execution**:
+
 - Bash: `{SAVE_RUN_REPORT_SCRIPT} --intent-id <FEATURE_DIR_NAME> --status pass --validator-pass-rate 1.0 --retries 0 --score 100`
 - PowerShell: `{SAVE_RUN_REPORT_SCRIPT} -IntentId <FEATURE_DIR_NAME> -Status pass -ValidatorPassRate 1.0 -Retries 0 -Score 100`
 
@@ -290,6 +293,7 @@ Do not create a new template; always operate on the existing `/memory/constituti
 - **Overall index**: Updated in `.intent/metrics/reliability-index.json`
 
 **Script Execution**:
+
 - Bash: `{SH} [success|run] [retries_count] [score_value]`
   - Use "success" if validation passed on first try, "run" otherwise
   - Pass number of retries performed during validation/repair
@@ -305,5 +309,6 @@ Do not create a new template; always operate on the existing `/memory/constituti
 - **Apply improvement strategies**: Adjust generation approach based on learned patterns
 
 **Script Execution**:
+
 - Bash: `{SH}`
 - PowerShell: `{PS}` (no parameters needed)

@@ -9,6 +9,7 @@ The Intent Kit now tracks reliability metrics through the Intent Kit Reliability
 ### Metrics Collection
 
 Each intent command now includes metrics tracking that collects data on:
+
 - Whether the content passed validation on the first try
 - How many repair attempts were needed
 - Quality score based on validation criteria
@@ -29,6 +30,7 @@ The system now includes **adaptive learning capabilities** that:
 - **Create adaptive guidance** in `.intent/adaptive-context.md` that influences future generations
 
 The adaptive learning system specifically detects and learns from:
+
 - Missing intent sections (Overview, Requirements, etc.)
 - Task format issues (missing checkboxes, IDs, file paths)
 - Plan structure problems (missing architecture, data model)
@@ -37,6 +39,7 @@ The adaptive learning system specifically detects and learns from:
 ### Self-Improvement Loop
 
 After each command execution, the system now performs:
+
 1. **Metrics tracking** - Record success rate, retries, quality score
 2. **Repair learning** - Store what repairs were performed
 3. **Pattern analysis** - Identify common failure modes
@@ -46,6 +49,7 @@ After each command execution, the system now performs:
 ### Viewing Reports
 
 Use the `/intent.reliability` command to generate a comprehensive report of the reliability index, including:
+
 - Overall reliability score
 - Daily metrics breakdown
 - Trend analysis over time

@@ -457,8 +457,10 @@ When reviewing your generated code, explicitly check:
    - **score**: Quality score based on validation results
 
 **Run Report Generation**:
+
 - **Create run_report.json**: After implementation is complete and all validation checks pass
-- **Structure**: 
+- **Structure**:
+
   ```json
   {
     "intent_id": "<FEATURE_DIR_NAME>",
@@ -469,11 +471,13 @@ When reviewing your generated code, explicitly check:
     "timestamp": "2025-11-01T08:45:00Z"
   }
   ```
+
 - **Save location**: `.intent/metrics/run_report_<TIMESTAMP>.json` where TIMESTAMP is YYYYMMDD_HHMMSS
 - **Implementation**: Execute `{SAVE_RUN_REPORT_SCRIPT}` with appropriate parameters
 - **Validate**: Ensure metrics directory exists at `.intent/metrics/`
 
 **Script Execution**:
+
 - Bash: `{SAVE_RUN_REPORT_SCRIPT} --intent-id <FEATURE_DIR_NAME> --status pass --validator-pass-rate 1.0 --retries 0 --score 100`
 - PowerShell: `{SAVE_RUN_REPORT_SCRIPT} -IntentId <FEATURE_DIR_NAME> -Status pass -ValidatorPassRate 1.0 -Retries 0 -Score 100`
 
@@ -487,6 +491,7 @@ When reviewing your generated code, explicitly check:
 - **Overall index**: Updated in `.intent/metrics/reliability-index.json`
 
 **Script Execution**:
+
 - Bash: `{SH} [success|run] [retries_count] [score_value]`
   - Use "success" if validation passed on first try, "run" otherwise
   - Pass number of retries performed during validation/repair
@@ -502,6 +507,7 @@ When reviewing your generated code, explicitly check:
 - **Apply improvement strategies**: Adjust generation approach based on learned patterns
 
 **Script Execution**:
+
 - Bash: `{SH}`
 - PowerShell: `{PS}` (no parameters needed)
 
