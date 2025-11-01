@@ -58,11 +58,11 @@
     "globalMetadata": {
       "_appTitle": "Intent Kit Documentation",
       "_appName": "Intent Kit",
-      "_appFooter": "Intent Kit - A specification-driven development toolkit",
+      "_appFooter": "Intent Kit - An Intent-Driven Development toolkit",
       "_enableSearch": true,
       "_disableContribution": false,
       "_gitContribute": {
-        "repo": "https://github.com/github/intent-kit",
+        "repo": "https://github.com/Intent-Kit/intent-kit",
         "branch": "main"
       }
     }

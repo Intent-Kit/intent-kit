@@ -66,7 +66,7 @@ uvx --from git+https://github.com/Intent-Kit/intent-kit.git intent init <project
 
 After initialization, you should see the following commands available in your AI agent:
 
-- `/intent.capture` - Create specifications
+- `/intent.capture` - Create intent documents
 - `/intent.plan` - Generate implementation plans  
 - `/intent.tasks` - Break down into actionable tasks
 

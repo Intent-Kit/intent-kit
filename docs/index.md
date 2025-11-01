@@ -6,7 +6,7 @@
 
 ## What is Intent-Driven Development?
 
-Intent-Driven Development **flips the script** on traditional software development. For decades, code has been king — specifications were just scaffolding we built and discarded once the "real work" of coding began. Intent-Driven Development changes this: **specifications become executable**, directly generating working implementations rather than just guiding them.
+Intent-Driven Development **flips the script** on traditional software development. For decades, code has been king — the original intent behind features was just scaffolding we built and discarded once the "real work" of coding began. Intent-Driven Development changes this: **clearly defined intents become the foundation** for working implementations rather than just initial guidance.
 
 ## Getting Started
 
@@ -18,10 +18,10 @@ Intent-Driven Development **flips the script** on traditional software developme
 
 Intent-Driven Development is a structured process that emphasizes:
 
-- **Intent-driven development** where specifications define the "*what*" before the "*how*"
-- **Rich specification creation** using guardrails and organizational principles
+- **Intent-driven development** where clear intents define the "*what*" before the "*how*"
+- **Rich intent specification** using guardrails and organizational principles
 - **Multi-step refinement** rather than one-shot code generation from prompts
-- **Heavy reliance** on advanced AI model capabilities for specification interpretation
+- **Heavy reliance** on advanced AI model capabilities for intent interpretation
 
 ## Development Phases
 
@@ -59,8 +59,8 @@ Our research and experimentation focus on:
 
 ## Contributing
 
-Please see our [Contributing Guide](https://github.com/github/intent-kit/blob/main/CONTRIBUTING.md) for information on how to contribute to this project.
+Please see our [Contributing Guide](https://github.com/Intent-Kit/intent-kit/blob/main/CONTRIBUTING.md) for information on how to contribute to this project.
 
 ## Support
 
-For support, please check our [Support Guide](https://github.com/github/intent-kit/blob/main/SUPPORT.md) or open an issue on GitHub.
+For support, please check our [Support Guide](https://github.com/Intent-Kit/intent-kit/blob/main/SUPPORT.md) or open an issue on GitHub.

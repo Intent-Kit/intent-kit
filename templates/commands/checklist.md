@@ -37,7 +37,7 @@ adaptive_learning_script:
 2. **Reason-Driven Checklist Creation**:
    - For each checklist item, explain WHY it validates quality
    - Base items on methodology principles, not arbitrary rules
-   - Prioritize items by impact on specification quality
+   - Prioritize items by impact on intent quality
    - **Validation**: Does each item test a specific quality dimension?
 
 3. **Documented Quality Assessment**:

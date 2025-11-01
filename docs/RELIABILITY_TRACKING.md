@@ -1,4 +1,4 @@
-## Intent Kit Reliability Index
+# Intent Kit Reliability Index
 
 The Intent Kit now tracks reliability metrics through the Intent Kit Reliability Index, which measures:
 
@@ -6,7 +6,7 @@ The Intent Kit now tracks reliability metrics through the Intent Kit Reliability
 - **Avg Retries**: Average number of retries needed when initial validation fails
 - **Avg Score**: Average quality score of generated content (0-10 scale)
 
-### Metrics Collection
+## Metrics Collection
 
 Each intent command now includes metrics tracking that collects data on:
 
@@ -15,11 +15,11 @@ Each intent command now includes metrics tracking that collects data on:
 - Quality score based on validation criteria
 - Specific failure patterns detected during validation
 
-### Daily Tracking
+## Daily Tracking
 
 Metrics are aggregated by day in `.intent/metrics/YYYY-MM-DD-metrics.json` and an overall reliability index is maintained in `.intent/metrics/reliability-index.json`.
 
-### Adaptive Learning
+## Adaptive Learning
 
 The system now includes **adaptive learning capabilities** that:
 

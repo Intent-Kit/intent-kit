@@ -66,9 +66,9 @@ see yours. You can edit any comments that you make, but you can't edit comments 
 delete any comments that you made, but you can't delete comments anybody else made.
 ```
 
-### Step 2: Refine the Specification
+### Step 2: Refine the Intent
 
-After the initial specification is created, clarify any missing requirements:
+After the initial intent document is created, clarify any missing requirements:
 
 ```text
 For each sample project or project that you create there should be a variable number of tasks between 5 and 15
@@ -76,7 +76,7 @@ tasks for each one randomly distributed into different states of completion. Mak
 one task in each stage of completion.
 ```
 
-Also validate the specification checklist:
+Also validate the intent checklist:
 
 ```text
 Read the review and acceptance checklist, and check off each item in the checklist if the feature intent meets the criteria. Leave it empty if it does not.
@@ -111,8 +111,8 @@ implement intents/002-create-taskify/plan.md
 ## Key Principles
 
 - **Be explicit** about what you're building and why
-- **Don't focus on tech stack** during specification phase
-- **Iterate and refine** your specifications before implementation
+- **Don't focus on tech stack** during intent phase
+- **Iterate and refine** your intents before implementation
 - **Validate** the plan before coding begins
 - **Let the AI agent handle** the implementation details
 

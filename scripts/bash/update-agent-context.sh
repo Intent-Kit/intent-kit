@@ -2,7 +2,7 @@
 
 # Update agent context files with information from plan.md
 #
-# This script maintains AI agent context files by parsing intent specifications 
+# This script maintains AI agent context files by parsing intent documents 
 # and updating agent-specific configuration files with project information.
 #
 # MAIN FUNCTIONS:
@@ -14,7 +14,7 @@
 # 2. Plan Data Extraction
 #    - Parses plan.md files to extract project metadata
 #    - Identifies language/version, frameworks, databases, and project types
-#    - Handles missing or incomplete specification data gracefully
+#    - Handles missing or incomplete intent data gracefully
 #
 # 3. Agent File Management
 #    - Creates new agent context files from templates when needed

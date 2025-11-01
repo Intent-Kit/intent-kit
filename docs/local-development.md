@@ -68,21 +68,21 @@ uvx --from git+https://github.com/Intent-Kit/intent-kit.git@your-feature-branch 
 If you're in another directory, use an absolute path instead of `.`:
 
 ```bash
-uvx --from /mnt/c/GitHub/intent-kit intent --help
-uvx --from /mnt/c/GitHub/intent-kit intent init demo-anywhere --ai copilot --ignore-agent-tools --script sh
+uvx --from /path/to/intent-kit intent --help
+uvx --from /path/to/intent-kit intent init demo-anywhere --ai copilot --ignore-agent-tools --script sh
 ```
 
 Set an environment variable for convenience:
 
 ```bash
-export SPEC_KIT_SRC=/mnt/c/GitHub/intent-kit
-uvx --from "$SPEC_KIT_SRC" intent init demo-env --ai copilot --ignore-agent-tools --script ps
+export INTENT_KIT_SRC=/path/to/intent-kit
+uvx --from "$INTENT_KIT_SRC" intent init demo-env --ai copilot --ignore-agent-tools --script ps
 ```
 
 (Optional) Define a shell function:
 
 ```bash
-intent-dev() { uvx --from /mnt/c/GitHub/intent-kit intent "$@"; }
+intent-dev() { uvx --from "$INTENT_KIT_SRC" intent "$@"; }
 # Then
 intent-dev --help
 ```
@@ -146,7 +146,7 @@ intent init demo --skip-tls --ai gemini --ignore-agent-tools --script ps
 | Run CLI directly | `python -m src.specify_cli --help` |
 | Editable install | `uv pip install -e .` then `intent ...` |
 | Local uvx run (repo root) | `uvx --from . intent ...` |
-| Local uvx run (abs path) | `uvx --from /mnt/c/GitHub/intent-kit intent ...` |
+| Local uvx run (abs path) | `uvx --from /path/to/intent-kit intent ...` |
 | Git branch uvx | `uvx --from git+URL@branch intent ...` |
 | Build wheel | `uv build` |
 

@@ -165,7 +165,7 @@ BANNER = """
 ╚═╝╚═╝  ╚═══╝   ╚═╝   ╚══════╝╚═╝  ╚═══╝   ╚═╝   
 """
 
-TAGLINE = "GitHub Intent Kit - Intent-Driven Development Toolkit"
+TAGLINE = "Intent Kit - Intent-Driven Development Toolkit"
 class StepTracker:
     """Track and render hierarchical steps without emojis, similar to Claude Code tree output.
     Supports live auto-refresh via an attached refresh callback.
@@ -1138,7 +1138,7 @@ def init(
     steps_lines.append(f"{step_num}. Start using slash commands with your AI agent:")
 
     steps_lines.append("   2.1 [cyan]/intent.constitution[/] - Establish project principles")
-    steps_lines.append("   2.2 [cyan]/intent.capture[/] - Create baseline specification")
+    steps_lines.append("   2.2 [cyan]/intent.capture[/] - Create baseline intent document")
     steps_lines.append("   2.3 [cyan]/intent.plan[/] - Create implementation plan")
     steps_lines.append("   2.4 [cyan]/intent.tasks[/] - Generate actionable tasks")
     steps_lines.append("   2.5 [cyan]/intent.implement[/] - Execute implementation")

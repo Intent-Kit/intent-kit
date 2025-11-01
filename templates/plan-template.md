@@ -1,7 +1,7 @@
 # Implementation Plan: [INTENT]
 
 **Branch**: `[###-intent-name]` | **Date**: [DATE] | **Intent**: [link]
-**Input**: Intent specification from `/intents/[###-intent-name]/intent.md`
+**Input**: Intent document from `/intents/[###-intent-name]/intent.md`
 
 **Intent Methodology Application**: This plan follows the shaping and injection stages, applying the selected design archetype ([ARCHITECT/HACKER/CRAFTSMAN/SCHOLAR/ZEN_CODER]) with action tendencies (verbose naming, abstract commenting, scenario-driven testing, as-you-go refactoring).
 

@@ -233,7 +233,7 @@ intent_methodology:
 
 ## About Intent Kit and Intent CLI
 
-**GitHub Intent Kit** is a comprehensive toolkit for implementing Intent-Driven Development (IDD) - a methodology that emphasizes creating clear specifications before implementation. The toolkit includes templates, scripts, and workflows that guide development teams through a structured approach to building software.
+**Intent Kit** is a comprehensive toolkit for implementing Intent-Driven Development (IDD) - a methodology that emphasizes creating clear intents before implementation. The toolkit includes templates, scripts, and workflows that guide development teams through a structured approach to building software.
 
 **Intent CLI** is the command-line interface that bootstraps projects with the Intent Kit framework. It sets up the necessary directory structures, templates, and AI agent integrations to support the Intent-Driven Development workflow.
 

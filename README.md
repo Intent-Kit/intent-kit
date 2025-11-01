@@ -1,3 +1,5 @@
+# Intent Kit
+
 <div align="center">
     <img src="./media/logo_small.webp" alt="Intent Templates Logo"/>
     <h1>🌱 Intent Templates</h1>
@@ -37,7 +39,7 @@
 
 ## 🤔 What is Intent-Driven Development?
 
-Intent-Driven Development **flips the script** on traditional software development. For decades, code has been king — specifications were just scaffolding we built and discarded once the "real work" of coding began. Intent-Driven Development changes this: **specifications become executable**, directly generating working implementations rather than just guiding them.
+Intent-Driven Development **flips the script** on traditional software development. For decades, code has been king — the original intent behind features was just scaffolding we built and discarded once the "real work" of coding began. Intent-Driven Development changes this: **clearly defined intents become the foundation** for working implementations rather than just initial guidance.
 
 ## ⚡ Get Started
 
@@ -248,10 +250,10 @@ Additional commands for enhanced quality and validation:
 
 Intent-Driven Development is a structured process that emphasizes:
 
-- **Intent-driven development** where specifications define the "*what*" before the "*how*"
-- **Rich specification creation** using guardrails and organizational principles
+- **Intent-driven development** where clear intents define the "*what*" before the "*how*"
+- **Rich intent specification** using guardrails and organizational principles
 - **Multi-step refinement** rather than one-shot code generation from prompts
-- **Heavy reliance** on advanced AI model capabilities for specification interpretation
+- **Heavy reliance** on advanced AI model capabilities for intent interpretation
 
 ## 🌟 Development Phases
 
@@ -402,9 +404,9 @@ The first step should be establishing your project's governing principles using 
 
 This step creates or updates the `.intent/memory/constitution.md` file with your project's foundational guidelines that the AI agent will reference during specification, planning, and implementation phases.
 
-### **STEP 2:** Create project specifications
+### **STEP 2:** Create project intents
 
-With your project principles established, you can now create the functional specifications. Use the `/intent.capture` command and then provide the concrete requirements for the project you want to develop.
+With your project principles established, you can now create the functional intents. Use the `/intent.capture` command and then provide the concrete requirements for the project you want to develop.
 
 >[!IMPORTANT]
 >Be as explicit as possible about *what* you are trying to build and *why*. **Do not focus on the tech stack at this point**.
@@ -432,9 +434,9 @@ delete any comments that you made, but you can't delete comments anybody else ma
 
 After this prompt is entered, you should see Claude Code kick off the planning and intent drafting process. Claude Code will also trigger some of the built-in scripts to set up the repository.
 
-Once this step is completed, you should have a new branch created (e.g., `001-create-taskify`), as well as a new specification in the `intents/001-create-taskify` directory.
+Once this step is completed, you should have a new branch created (e.g., `001-create-taskify`), as well as a new intent document in the `intents/001-create-taskify` directory.
 
-The produced specification should contain a set of user stories and functional requirements, as defined in the template.
+The produced intent document should contain a set of user stories and functional requirements, as defined in the template.
 
 At this stage, your project folder contents should resemble the following:
 
@@ -457,9 +459,9 @@ At this stage, your project folder contents should resemble the following:
         └── tasks-template.md
 ```
 
-### **STEP 3:** Functional specification clarification (required before planning)
+### **STEP 3:** Functional intent clarification (required before planning)
 
-With the baseline specification created, you can go ahead and clarify any of the requirements that were not captured properly within the first shot attempt.
+With the baseline intent document created, you can go ahead and clarify any of the requirements that were not captured properly within the first shot attempt.
 
 You should run the structured clarification workflow **before** creating a technical plan to reduce rework downstream.
 
@@ -484,7 +486,7 @@ You should also ask Claude Code to validate the **Review & Acceptance Checklist*
 Read the review and acceptance checklist, and check off each item in the checklist if the feature intent meets the criteria. Leave it empty if it does not.
 ```
 
-It's important to use the interaction with Claude Code as an opportunity to clarify and ask questions around the specification - **do not treat its first attempt as final**.
+It's important to use the interaction with Claude Code as an opportunity to clarify and ask questions around the intent document - **do not treat its first attempt as final**.
 
 ### **STEP 4:** Generate a plan
 
@@ -580,7 +582,7 @@ With the implementation plan validated, you can now break down the plan into spe
 /intent.tasks
 ```
 
-This step creates a `tasks.md` file in your feature specification directory that contains:
+This step creates a `tasks.md` file in your feature intent directory that contains:
 
 - **Task breakdown organized by user story** - Each user story becomes a separate implementation phase with its own set of tasks
 - **Dependency management** - Tasks are ordered to respect dependencies between components (e.g., models before services, services before endpoints)
