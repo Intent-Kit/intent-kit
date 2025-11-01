@@ -304,6 +304,35 @@ If you encounter issues with an agent, please open an issue so we can refine the
 
 ---
 
+## 🧠 Adaptive Intelligence & Reliability Tracking
+
+Intent Kit now includes comprehensive metrics tracking and adaptive learning to measure and improve the reliability and quality of generated code. The system:
+
+- **Tracks key metrics**: Success rate, retries needed, quality scores
+- **Analyzes failure patterns**: Identifies common issues during validation
+- **Learns from repairs**: Stores what fixes were applied and why
+- **Adapts over time**: Adjusts generation approach based on learned patterns
+- **Self-improves**: Uses historical data to enhance future generations
+
+### Key Capabilities
+
+- **Success Rate**: Percentage of runs passing validation on first try
+- **Avg Retries**: Average number of repair attempts needed
+- **Avg Score**: Average quality score of generated content
+- **Daily metrics**: Aggregated data by date
+- **Failure pattern detection**: Identifies specific issues (missing sections, format problems, etc.)
+- **Adaptive context**: Creates guidance based on learned improvements
+- **Reliability Index**: Overall health and improvement trends
+
+The system automatically learns from:
+
+- Missing intent sections (Overview, Requirements, etc.)
+- Task format issues (missing checkboxes, IDs)
+- Plan structural problems
+- Quality issues that trigger repairs
+
+Use the `/intent.reliability` command to view detailed reports and trend analysis.
+
 ## 📋 Detailed Process
 
 <details>

@@ -3,6 +3,21 @@ description: Generate an actionable, dependency-ordered tasks.md for the intent 
 scripts:
   sh: scripts/bash/check-prerequisites.sh --json
   ps: scripts/powershell/check-prerequisites.ps1 -Json
+save_run_report_script:
+  sh: scripts/bash/save-run-report.sh
+  ps: scripts/powershell/save-run-report.ps1
+validate_script:
+  sh: scripts/bash/validate-content.sh
+  ps: scripts/powershell/validate-content.ps1
+repair_script:
+  sh: scripts/bash/repair-content.sh
+  ps: scripts/powershell/repair-content.ps1
+track_metrics_script:
+  sh: scripts/bash/track-metrics.sh
+  ps: scripts/powershell/track-metrics.ps1
+adaptive_learning_script:
+  sh: scripts/bash/adaptive-learning.sh
+  ps: scripts/powershell/adaptive-learning.ps1
 ---
 
 ## User Input
@@ -161,6 +176,25 @@ Before completing tasks.md, verify:
 
    **CRITICAL**: If ANY validation step fails, fix the issues BEFORE reporting completion. Do NOT report successful generation if tasks have format errors, missing requirements, or invalid dependencies.
 
+## Validation and Repair Stage
+
+**After task generation and initial validation, execute systematic validation/repair loop:**
+
+1. **Validate Content Quality**: Execute `{VALIDATE_SCRIPT} --file TASKS --content-type tasks`
+   - If validation passes (`status: pass`), proceed to run report generation
+   - If validation fails (`status: fail`), continue to repair step
+
+2. **Repair Content (if needed)**: Execute `{REPAIR_SCRIPT} --file TASKS --content-type tasks` 
+   - Re-validate the repaired content
+   - If re-validation passes, proceed to run report generation
+   - If re-validation fails, document issues and proceed to run report with `status: repaired`
+
+3. **Update Run Report Values**: Adjust run report parameters based on validation/repair outcome:
+   - **validator_pass_rate**: From validation report
+   - **status**: `pass` (if validation passed without repair), `repaired` (if repair was needed)
+   - **retries**: Number of repair iterations performed
+   - **score**: Quality score based on validation results
+
 6. **Report**: Output path to generated tasks.md and summary:
    - Total task count
    - Task count per user story
@@ -245,3 +279,55 @@ Every task MUST strictly follow this format:
   - Within each story: Tests (if requested) → Models → Services → Endpoints → Integration
   - Each phase should be a complete, independently testable increment
 - **Final Phase**: Polish & Cross-Cutting Concerns
+
+## Run Report Generation
+
+**Upon completion of task generation, generate and save run report:**
+
+- **Create run_report.json**: After tasks.md is validated and written
+- **Structure**: 
+  ```json
+  {
+    "intent_id": "<FEATURE_DIR_NAME>",
+    "status": "pass|fail|repaired",
+    "validator_pass_rate": 0.82,
+    "retries": 1,
+    "score": 78,
+    "timestamp": "2025-11-01T08:45:00Z"
+  }
+  ```
+- **Save location**: `.intent/metrics/run_report_<TIMESTAMP>.json` where TIMESTAMP is YYYYMMDD_HHMMSS
+- **Implementation**: Execute `{SAVE_RUN_REPORT_SCRIPT}` with appropriate parameters
+- **Validate**: Ensure metrics directory exists at `.intent/metrics/`
+
+**Script Execution**:
+- Bash: `{SAVE_RUN_REPORT_SCRIPT} --intent-id <FEATURE_DIR_NAME> --status pass --validator-pass-rate 1.0 --retries 0 --score 100`
+- PowerShell: `{SAVE_RUN_REPORT_SCRIPT} -IntentId <FEATURE_DIR_NAME> -Status pass -ValidatorPassRate 1.0 -Retries 0 -Score 100`
+
+## Metrics Tracking and Reliability Index
+
+**Track task generation metrics to calculate Intent Kit Reliability Index:**
+
+- **Update reliability metrics**: Execute `{SH}` or `{PS}` with validation and retry information
+- **Metrics tracked**: % of runs passing validation first try, avg_retries, avg_score
+- **Daily tracking**: Metrics aggregated by date in `.intent/metrics/YYYY-MM-DD-metrics.json`
+- **Overall index**: Updated in `.intent/metrics/reliability-index.json`
+
+**Script Execution**:
+- Bash: `{SH} [success|run] [retries_count] [score_value]`
+  - Use "success" if validation passed on first try, "run" otherwise
+  - Pass number of retries performed during validation/repair
+  - Pass quality score from validation (0.0-10.0 scale)
+- PowerShell: `{PS} -Status [success|run] -Retries [retries_count] -Score [score_value]`
+
+## Adaptive Learning
+
+**Apply adaptive learning to improve future generations:**
+
+- **Analyze metrics and adjust**: Execute `{SH}` or `{PS}` to identify patterns and improve future performance
+- **Update learning context**: Based on current metrics and failure patterns
+- **Apply improvement strategies**: Adjust generation approach based on learned patterns
+
+**Script Execution**:
+- Bash: `{SH}`
+- PowerShell: `{PS}` (no parameters needed)
